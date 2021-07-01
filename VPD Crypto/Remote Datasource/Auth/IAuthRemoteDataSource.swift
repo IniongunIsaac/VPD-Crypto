@@ -8,29 +8,16 @@
 
 import Foundation
 import RxSwift
+import FirebaseAuth
 
 protocol IAuthRemoteDataSource {
- 
-    func getToken() -> Observable<BaseResponse<Token>>
     
-    func refreshToken() -> Observable<BaseResponse<Token>>
+    func signUp(email: String, password: String) -> Observable<AuthDataResult>
     
-    func login(body: BodyParam) -> Observable<AuthRes>
+    func signIn(email: String, password: String) -> Observable<AuthDataResult>
     
-    func register(body: BodyParam) -> Observable<AuthRes>
+    func saveUserData(user: VPDUser) -> Observable<Void>
     
-    func changePassword(body: BodyParam) -> Observable<AuthRes>
-    
-    func resetPassword(body: BodyParam) -> Observable<AuthRes>
-    
-    func verifyOTP(body: BodyParam) -> Observable<AuthRes>
-    
-    func requestOTP(body: BodyParam) -> Observable<AuthRes>
-    
-    func resendOTP(body: BodyParam) -> Observable<AuthRes>
-    
-    func getActiveProviderTypes() -> Observable<BaseResponse<[ProviderType]>>
-    
-    func uploadDocuments(data: [String : Data]) -> Observable<AuthRes>
+    func getUserData() -> Observable<VPDUser>
     
 }

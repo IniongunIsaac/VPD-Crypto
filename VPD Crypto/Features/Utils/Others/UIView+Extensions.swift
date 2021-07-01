@@ -191,7 +191,7 @@ extension UIView {
     }
     
     func addPopGesture(on viewcontroller: UIViewController) {
-        self.animateViewOnTapGesture { [weak self] in
+        self.animateViewOnTapGesture {
             viewcontroller.popViewController()
         }
     }

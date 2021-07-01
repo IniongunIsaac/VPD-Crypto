@@ -9,9 +9,5 @@
 import Foundation
 
 struct PreferenceConstants {
-    static let HAS_SEEN_ONBOARDING = "Has Seen Onboarding"
     
-    static let TOKEN = "Token"
-    
-    static let USER_DETAILS = "User Details"
 }

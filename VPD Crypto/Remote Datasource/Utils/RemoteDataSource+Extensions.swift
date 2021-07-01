@@ -11,20 +11,10 @@ import RxSwift
 
 typealias BodyParam = [String : Any]
 
-typealias AuthRes = BaseResponse<ActionableResponse<User>>
-
-typealias ObservableBaseRes<T: Codable> = Observable<BaseResponse<T>>
-
-extension AuthRes {
-    var type: BaseResponse<ActionableResponse<User>>.Type {
-        BaseResponse<ActionableResponse<User>>.self
-    }
-}
-
 extension Decodable {
     ///Maps JSON String to actual Decodable Object
     ///throws an exception if mapping fails
-    static func mapTo(jsonString: String) throws -> Self? {
+    static func map(from jsonString: String) throws -> Self? {
         
         let decoder = JSONDecoder()
         //decoder.keyDecodingStrategy = .convertFromSnakeCase

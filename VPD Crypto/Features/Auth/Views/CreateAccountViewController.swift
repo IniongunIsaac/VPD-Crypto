@@ -11,40 +11,35 @@ import UIKit
 class CreateAccountViewController: BaseViewController {
 
     @IBOutlet weak var fullnameTextfield: AppTextfield!
-    @IBOutlet weak var phoneNumberTextfield: AppTextfield!
     @IBOutlet weak var emailTextfield: AppTextfield!
     @IBOutlet weak var passwordTextfield: AppTextfield!
     @IBOutlet weak var confirmPasswordTextfield: AppTextfield!
-    @IBOutlet weak var parentScrollViewBottomConstraint: NSLayoutConstraint!
-    @IBOutlet weak var nextButton: UIButton!
+    @IBOutlet weak var createAccountButton: UIButton!
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var contentViewTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var backIconImageView: UIImageView!
     
-    fileprivate lazy var views: [UIView] = {
-       [nextButton, loginButton]
-    }()
+    override var views: [UIView] { [createAccountButton, loginButton] }
+    
     var authNavType: AuthNavigationType = .authOptions
     
     var authViewModel: IAuthViewModel!
-    
     override func getViewModel() -> BaseViewModel { authViewModel as! BaseViewModel }
+    override var horizontalProgressBarYPosition: CGFloat { backIconImageView.minY - 2 }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func configureViews() {
+        super.configureViews()
         hideNavBar()
+        
+        [fullnameTextfield, emailTextfield, passwordTextfield, confirmPasswordTextfield].addClearBackground()
+        fullnameTextfield.keyboardType = .alphabet
+        emailTextfield.keyboardType = .emailAddress
+        
+        backIconImageView.addPopGesture(on: self)
     }
     
-    override func showLoading() {
-        views.disableUserInteraction()
-    }
-    
-    override func hideLoading() {
-        views.enableUserInteraction()
-    }
-    
-    @IBAction func nextButtonTapped(_ sender: Any) {
-        authViewModel.validateInitialRegistrationDetails(fullname: fullnameTextfield.text.orEmpty, email: emailTextfield.text.orEmpty, phoneNo: phoneNumberTextfield.text.orEmpty, password: passwordTextfield.text.orEmpty, confirmPassword: confirmPasswordTextfield.text.orEmpty)
+    @IBAction func createAccountButtonTapped(_ sender: Any) {
+        authViewModel.createAccount(fullname: fullnameTextfield.text, email: emailTextfield.text, password: passwordTextfield.text, confirmPassword: confirmPasswordTextfield.text)
     }
     
     @IBAction func loginButtonTapped(_ sender: Any) {
@@ -52,39 +47,27 @@ class CreateAccountViewController: BaseViewController {
         case .login:
             popViewController()
         case .authOptions:
-            pushViewController(R.storyboard.auth.loginViewController()!)
+            pushViewController(R.storyboard.auth.loginViewController()!.apply {
+                $0.authNavType = .createAccount
+            })
         default:
             break
         }
     }
     
-    override func configureViews() {
-        super.configureViews()
-        [fullnameTextfield, emailTextfield, passwordTextfield, confirmPasswordTextfield, phoneNumberTextfield].addClearBackground()
-        fullnameTextfield.keyboardType = .alphabet
-        passwordTextfield.isSecureTextEntry = true
-        confirmPasswordTextfield.isSecureTextEntry = true
-        phoneNumberTextfield.keyboardType = .phonePad
-        emailTextfield.keyboardType = .emailAddress
-        
-        backIconImageView.addPopGesture(on: self)
-    }
-    
     override func setChildViewControllerObservers() {
         super.setChildViewControllerObservers()
         observeValidationMessages()
-        observeShowVehicleDetails()
+        observeShowDashboard()
     }
     
     fileprivate func observeValidationMessages() {
-        authViewModel.validationMessage.bind { [weak self] msg in
+        authViewModel.validationMessages.bind { [weak self] msg in
             switch msg.validationType {
             case .firstName:
                 self?.fullnameTextfield.showMessage(msg)
             case .email:
                 self?.emailTextfield.showMessage(msg)
-            case .phoneNumber:
-                self?.phoneNumberTextfield.showMessage(msg)
             case .password:
                 self?.passwordTextfield.showMessage(msg)
             case .confirmPassword:
@@ -95,8 +78,12 @@ class CreateAccountViewController: BaseViewController {
         }.disposed(by: disposeBag)
     }
     
-    fileprivate func observeShowVehicleDetails() {
-        
+    fileprivate func observeShowDashboard() {
+        authViewModel.showDashboard.bind { [weak self] show in
+            if show {
+                self?.showAlert(message: "Show Dashboard!", type: .success)
+            }
+        }.disposed(by: disposeBag)
     }
 
 }

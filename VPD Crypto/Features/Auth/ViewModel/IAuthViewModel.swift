@@ -11,26 +11,12 @@ import RxSwift
 
 protocol IAuthViewModel {
     
-    var validationMessage: PublishSubject<ValidationMessage> { get }
+    var validationMessages: PublishSubject<ValidationMessage> { get }
     
-    var showHome: PublishSubject<Bool> { get }
+    var showDashboard: PublishSubject<Bool> { get }
     
-    var showChangePassword: PublishSubject<Bool> { get }
+    func createAccount(fullname: String, email: String, password: String, confirmPassword: String)
     
-    var showVehicleDetails: PublishSubject<Bool> { get }
-    
-    var showDocumentUpload: PublishSubject<Bool> { get }
-    
-    var showVerification: PublishSubject<Bool> { get }
-    
-    var showServiceTypes: PublishSubject<Bool> { get }
-    
-    var serviceTypes: [ProviderType] { get }
-    
-    func getAPIToken()
-    
-    func validateInitialRegistrationDetails(fullname: String, email: String, phoneNo: String, password: String, confirmPassword: String)
-    
-    func createAccount(vehicleType: Int, vehicleBrand: String, vehicleModel: String, vehicleYear: String, vehicleLicense: String, vehicleColor: String, serviceType: Int)
+    func login(email: String, password: String)
     
 }

@@ -9,20 +9,18 @@
 import Foundation
 import Swinject
 import SwinjectStoryboard
+import FirebaseAuth
+import FirebaseFirestore
 
 struct AuthDependencyInjections {
     
     static func setup(container: Container) {
         
-        container.register(IAuthRemoteDataSource.self) { _ in AuthRemoteDataSourceImpl() }
-        
-        container.register(IAuthRepo.self) { AuthRepoImpl(authRemoteDataSource: $0.resolve(IAuthRemoteDataSource.self)!) }
+        container.register(IAuthRemoteDataSource.self) { _ in AuthRemoteDataSourceImpl(auth: Auth.auth(), firestore: Firestore.firestore()) }
         
         container.register(IAuthViewModel.self) {
-            AuthViewModelImpl(authRepo: $0.resolve(IAuthRepo.self)!, inputValidator: $0.resolve(IInputValidator.self)!, preferenceRepo: $0.resolve(IPreferenceRepo.self)!)
+            AuthViewModelImpl(authRemoteDatasource: $0.resolve(IAuthRemoteDataSource.self)!, inputValidator: $0.resolve(IInputValidator.self)!, preference: $0.resolve(IPreference.self)!)
         }
-        
-        container.storyboardInitCompleted(AuthOptionsViewController.self) { $1.authViewModel = $0.resolve(IAuthViewModel.self) }
 
         container.storyboardInitCompleted(LoginViewController.self) { $1.authViewModel = $0.resolve(IAuthViewModel.self) }
         

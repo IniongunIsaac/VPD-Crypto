@@ -79,8 +79,8 @@ extension UIViewController {
         present(viewController, animated: animated, completion: completion)
     }
     
-    func navigateToHome(animate: Bool = false) {
-        setViewControllers(with: R.storyboard.home.homeViewController()!, animate: animate)
+    func navigateToDashboard(animate: Bool = false) {
+        //setViewControllers(with: R.storyboard.home.homeViewController()!, animate: animate)
     }
     
     func hideNavBar(_ shouldHide: Bool = true) {

@@ -12,69 +12,57 @@ import DeviceKit
 
 class AuthViewModelImpl: BaseViewModel, IAuthViewModel {
     
-    var validationMessage: PublishSubject<ValidationMessage> = PublishSubject()
-    var showHome: PublishSubject<Bool> = PublishSubject()
-    var showChangePassword: PublishSubject<Bool> = PublishSubject()
-    var showVehicleDetails: PublishSubject<Bool> = PublishSubject()
-    var showDocumentUpload: PublishSubject<Bool> = PublishSubject()
-    var showVerification: PublishSubject<Bool> = PublishSubject()
-    var showServiceTypes: PublishSubject<Bool> = PublishSubject()
-    var serviceTypes: [ProviderType] = []
+    var validationMessages: PublishSubject<ValidationMessage> = PublishSubject()
+    var showDashboard: PublishSubject<Bool> = PublishSubject()
     
-    fileprivate var emailAddress = ""
-    fileprivate var oneTimePassword = ""
-    fileprivate var registrationData: BodyParam = [:]
-    
-    fileprivate var authRepo: IAuthRepo
     fileprivate let inputValidator: IInputValidator
-    fileprivate var preferenceRepo: IPreferenceRepo
+    fileprivate var preference: IPreference
+    fileprivate let authRemoteDatasource: IAuthRemoteDataSource
     
-    init(authRepo: IAuthRepo, inputValidator: IInputValidator, preferenceRepo: IPreferenceRepo) {
-        self.authRepo = authRepo
+    init(authRemoteDatasource: IAuthRemoteDataSource, inputValidator: IInputValidator, preference: IPreference) {
+        self.authRemoteDatasource = authRemoteDatasource
         self.inputValidator = inputValidator
-        self.preferenceRepo = preferenceRepo
+        self.preference = preference
     }
     
-    func getAPIToken() {
-        if let token = preferenceRepo.token, token.expiryDate.greater(Date()) {
-            if preferenceRepo.isLoggedIn {
-                showHome.onNext(true)
-            }
-        } else {
-            subscribe(authRepo.getToken()) { [weak self] token in
-                self?.preferenceRepo.token = token
-            } error: { [weak self] _ in
-                self?.getAPIToken()
-            }
-        }
-    }
-    
-    func validateInitialRegistrationDetails(fullname: String, email: String, phoneNo: String, password: String, confirmPassword: String) {
+    func createAccount(fullname: String, email: String, password: String, confirmPassword: String) {
         let validationMsgs = [
             inputValidator.validateFirstName(name: fullname),
             inputValidator.validateEmailAddress(email: email),
             inputValidator.validatePassword(password: password),
-            inputValidator.validateConfirmPassword(password: password, confirmPassword: confirmPassword),
-            inputValidator.validatePhoneNumber(phoneNo: phoneNo)
+            inputValidator.validateConfirmPassword(password: password, confirmPassword: confirmPassword)
         ]
         
-        validationMsgs.forEach { msg in validationMessage.onNext(msg) }
+        validationMsgs.forEach { msg in validationMessages.onNext(msg) }
         let validValues = validationMsgs.filter { !$0.isValid }.isEmpty
         
         if validValues {
-            emailAddress = email
-            registrationData = [
-                "name": fullname,
-                "emailAddress": email,
-                "phoneNumber": phoneNo,
-                "password": password,
-                "deviceToken": deviceUUID
-            ]
-            showVehicleDetails.onNext(true)
+            subscribeAny(authRemoteDatasource.signUp(email: email, password: password), success: { [weak self] _ in
+                let user = VPDUser(fullname: fullname, email: email)
+                self?.saveUserData(user)
+            })
         }
     }
     
-    func createAccount(vehicleType: Int, vehicleBrand: String, vehicleModel: String, vehicleYear: String, vehicleLicense: String, vehicleColor: String, serviceType: Int) {
+    fileprivate func saveUserData(_ user: VPDUser) {
+        subscribeAny(authRemoteDatasource.saveUserData(user: user), success: { [weak self] in
+            self?.showDashboard.onNext(true)
+        })
+    }
+    
+    func login(email: String, password: String) {
+        let validationMsgs = [
+            inputValidator.validateEmailAddress(email: email),
+            inputValidator.validatePassword(password: password)
+        ]
         
+        validationMsgs.forEach { msg in validationMessages.onNext(msg) }
+        let validValues = validationMsgs.filter { !$0.isValid }.isEmpty
+        
+        if validValues {
+            subscribeAny(authRemoteDatasource.signIn(email: email, password: password), success: { [weak self] _ in
+                self?.showDashboard.onNext(true)
+            })
+        }
     }
 }

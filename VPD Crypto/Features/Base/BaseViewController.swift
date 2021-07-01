@@ -26,6 +26,8 @@ class BaseViewController: UIViewController {
         preconditionFailure("BaseViewController subclass must provide a subclass of BaseViewModel")
     }
     
+    var views: [UIView] { [] }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -98,12 +100,14 @@ class BaseViewController: UIViewController {
         createHorizontalProgressBar()
         progressBar?.startAnimating()
         disableNavBar()
+        views.disableUserInteraction()
     }
     
     func hideLoading() {
         enableSwipeBackToPopGesture()
         progressBar?.stopAnimating()
         enableNavBar()
+        views.enableUserInteraction()
     }
     
     override func viewWillAppear(_ animated: Bool) {

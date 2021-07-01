@@ -8,52 +8,55 @@
 
 import Foundation
 import RxSwift
-import Alamofire
+import FirebaseAuth
+import FirebaseFirestore
+import FirebaseFirestoreSwift
+import RxFirebaseAuthentication
 
-class AuthRemoteDataSourceImpl: BaseRemoteDataSourceImpl, IAuthRemoteDataSource {
+class AuthRemoteDataSourceImpl: IAuthRemoteDataSource {
     
-    func getToken() -> Observable<BaseResponse<Token>> {
-        makeAPIRequest(responseType: BaseResponse<Token>.self, url: RemoteDataSourceConstants.Endpoints.API_TOKEN, method: .post, params: RemoteDataSourceConstants.Credentials.API_TOKEN_CREDENTIALS)
+    fileprivate var auth: Auth
+    fileprivate var firestore: Firestore
+    
+    init(auth: Auth, firestore: Firestore) {
+        self.auth = auth
+        self.firestore = firestore
     }
     
-    func refreshToken() -> Observable<BaseResponse<Token>> {
-        makeAPIRequest(responseType: BaseResponse<Token>.self, url: RemoteDataSourceConstants.Endpoints.REFRESH_TOKEN, method: .post, params: RemoteDataSourceConstants.Credentials.API_TOKEN_CREDENTIALS)
+    func signUp(email: String, password: String) -> Observable<AuthDataResult> {
+        return Observable.create { [weak self] observer in
+            self?.auth.createUser(withEmail: email, password: password) { authDataRes, error in
+                if let error = error {
+                    observer.onError(error)
+                } else if let authDataRes = authDataRes {
+                    observer.onNext(authDataRes)
+                    observer.onCompleted()
+                }
+            }
+            return Disposables.create()
+        }
     }
     
-    func login(body: BodyParam) -> Observable<AuthRes> {
-        makeAPIRequest(responseType: AuthRes.self, url: RemoteDataSourceConstants.Endpoints.Auth.LOGIN, method: .post, params: body)
+    func signIn(email: String, password: String) -> Observable<AuthDataResult> {
+        return Observable.create { [weak self] observer in
+            self?.auth.signIn(withEmail: email, password: password) { authDataRes, error in
+                if let error = error {
+                    observer.onError(error)
+                } else if let authDataRes = authDataRes {
+                    observer.onNext(authDataRes)
+                    observer.onCompleted()
+                }
+            }
+            return Disposables.create()
+        }
     }
     
-    func register(body: BodyParam) -> Observable<AuthRes> {
-        makeAPIRequest(responseType: AuthRes.self, url: RemoteDataSourceConstants.Endpoints.Auth.REGISTER, method: .post, params: body)
+    func saveUserData(user: VPDUser) -> Observable<Void> {
+        return firestore.collection(RemoteDataSourceConstants.USERS_COLLECTION).document(auth.currentUser!.uid).rxSetData(from: user)
     }
     
-    func changePassword(body: BodyParam) -> Observable<AuthRes> {
-        makeAPIRequest(responseType: AuthRes.self, url: RemoteDataSourceConstants.Endpoints.Auth.CHANGE_PASSWORD, method: .post, params: body)
-    }
-    
-    func resetPassword(body: BodyParam) -> Observable<AuthRes> {
-        makeAPIRequest(responseType: AuthRes.self, url: RemoteDataSourceConstants.Endpoints.Auth.RESET_PASSWORD, method: .post, params: body)
-    }
-    
-    func verifyOTP(body: BodyParam) -> Observable<AuthRes> {
-        makeAPIRequest(responseType: AuthRes.self, url: RemoteDataSourceConstants.Endpoints.Auth.VERIFY_OTP, method: .post, params: body)
-    }
-    
-    func requestOTP(body: BodyParam) -> Observable<AuthRes> {
-        makeAPIRequest(responseType: AuthRes.self, url: RemoteDataSourceConstants.Endpoints.Auth.REQUEST_OTP, method: .post, params: body)
-    }
-    
-    func resendOTP(body: BodyParam) -> Observable<AuthRes> {
-        makeAPIRequest(responseType: AuthRes.self, url: RemoteDataSourceConstants.Endpoints.Auth.RESEND_OTP, method: .post, params: body)
-    }
-    
-    func getActiveProviderTypes() -> Observable<BaseResponse<[ProviderType]>> {
-        makeAPIRequest(responseType: BaseResponse<[ProviderType]>.self, url: RemoteDataSourceConstants.Endpoints.ProviderType.GET_ACTIVE_TYPES, method: .get)
-    }
-    
-    func uploadDocuments(data: [String : Data]) -> Observable<AuthRes> {
-        makeMultipartFormDataRequest(responseType: AuthRes.self, url: RemoteDataSourceConstants.Endpoints.Document.ADD_BY_EMAIL, data: data)
+    func getUserData() -> Observable<VPDUser> {
+        return firestore.collection(RemoteDataSourceConstants.USERS_COLLECTION).document(auth.currentUser!.uid).rxGetDocument()
     }
     
 }

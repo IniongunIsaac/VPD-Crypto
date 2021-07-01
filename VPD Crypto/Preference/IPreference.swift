@@ -10,10 +10,6 @@ import Foundation
 
 protocol IPreference {
     
-    var hasSeenOnboarding: Bool { get set }
     
-    var user: User? { get set }
-    
-    var token: Token? { get set }
     
 }

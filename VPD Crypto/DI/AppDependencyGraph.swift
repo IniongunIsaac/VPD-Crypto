@@ -16,8 +16,6 @@ extension SwinjectStoryboard {
         
         defaultContainer.register(IPreference.self) { _ in PreferenceImpl() }
         
-        defaultContainer.register(IPreferenceRepo.self) { PreferenceRepoImpl(preference: $0.resolve(IPreference.self)!) }
-        
         defaultContainer.register(IInputValidator.self) { _ in InputValidatorImpl() }
         
         AuthDependencyInjections.setup(container: defaultContainer)
