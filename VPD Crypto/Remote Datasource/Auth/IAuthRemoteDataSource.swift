@@ -18,6 +18,4 @@ protocol IAuthRemoteDataSource {
     
     func saveUserData(user: VPDUser) -> Observable<Void>
     
-    func getUserData() -> Observable<VPDUser>
-    
 }

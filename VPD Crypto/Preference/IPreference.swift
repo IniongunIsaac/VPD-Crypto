@@ -10,6 +10,6 @@ import Foundation
 
 protocol IPreference {
     
-    
+    var isLoggedIn: Bool { get }
     
 }

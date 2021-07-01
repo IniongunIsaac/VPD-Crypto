@@ -11,7 +11,6 @@ import RxSwift
 import FirebaseAuth
 import FirebaseFirestore
 import FirebaseFirestoreSwift
-import RxFirebaseAuthentication
 
 class AuthRemoteDataSourceImpl: IAuthRemoteDataSource {
     
@@ -53,10 +52,6 @@ class AuthRemoteDataSourceImpl: IAuthRemoteDataSource {
     
     func saveUserData(user: VPDUser) -> Observable<Void> {
         return firestore.collection(RemoteDataSourceConstants.USERS_COLLECTION).document(auth.currentUser!.uid).rxSetData(from: user)
-    }
-    
-    func getUserData() -> Observable<VPDUser> {
-        return firestore.collection(RemoteDataSourceConstants.USERS_COLLECTION).document(auth.currentUser!.uid).rxGetDocument()
     }
     
 }

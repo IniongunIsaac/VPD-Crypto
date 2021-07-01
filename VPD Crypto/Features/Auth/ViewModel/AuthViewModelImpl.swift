@@ -25,6 +25,11 @@ class AuthViewModelImpl: BaseViewModel, IAuthViewModel {
         self.preference = preference
     }
     
+    override func viewWillAppear() {
+        super.viewWillAppear()
+        showDashboard.onNext(preference.isLoggedIn)
+    }
+    
     func createAccount(fullname: String, email: String, password: String, confirmPassword: String) {
         let validationMsgs = [
             inputValidator.validateFirstName(name: fullname),

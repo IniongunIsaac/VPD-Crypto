@@ -302,7 +302,11 @@ extension Array where Element == String {
     }
 }
 
-func getInfoPlistData() -> [String: Any]? {
+func infoPlistString(key: String) -> String {
+    infoPlistProperty![key] as! String
+}
+
+var infoPlistProperty: [String: Any]? {
     if  let path = Bundle.main.path(forResource: "Info", ofType: "plist"), let xml = FileManager.default.contents(atPath: path) {
         return (try? PropertyListSerialization.propertyList(from: xml, options: .mutableContainersAndLeaves, format: nil)) as? [String: Any]
     }

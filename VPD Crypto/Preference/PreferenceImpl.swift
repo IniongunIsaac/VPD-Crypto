@@ -7,13 +7,15 @@
 //
 
 import Foundation
+import FirebaseAuth
 
 struct PreferenceImpl: IPreference {
     
     fileprivate let userDefs = UserDefaults.standard
     fileprivate let encoder = JSONEncoder()
     fileprivate let decoder = JSONDecoder()
+    let auth: Auth
     
-    
+    var isLoggedIn: Bool { auth.currentUser.isNotNil }
     
 }

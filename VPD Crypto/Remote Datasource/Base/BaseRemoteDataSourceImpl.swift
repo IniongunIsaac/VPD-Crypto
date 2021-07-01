@@ -14,11 +14,7 @@ import RxSwift
 class BaseRemoteDataSourceImpl: IBaseRemoteDataSource {
     
     fileprivate let disposeBag = DisposeBag()
-    fileprivate let preference: IPreference = PreferenceImpl()
     fileprivate let manager = Session.default
-//    fileprivate lazy var headers: HTTPHeaders = {
-//        [.authorization(bearerToken: preference.token?.token ?? "")]
-//    }()
     
     func makeAPIRequest<T>(responseType: T.Type, url: String, method: HTTPMethod = .get, params: [String : Any]? = nil, encoding: ParameterEncoding = JSONEncoding.default) -> Observable<T> where T : Decodable, T : Encodable {
         
