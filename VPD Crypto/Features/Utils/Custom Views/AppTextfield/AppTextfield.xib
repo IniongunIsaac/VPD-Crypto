@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="dark"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Gerbera-Light.otf">
+            <string>Gerbera-Light</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AppTextfield" customModule="VPD_Crypto" customModuleProvider="target">
+            <connections>
+                <outlet property="contentView" destination="iN0-l3-epB" id="3bh-s8-hXi"/>
+                <outlet property="detailsView" destination="jwa-Vl-iSd" id="V2w-ol-Y4d"/>
+                <outlet property="errorLabel" destination="3wz-Ia-gnF" id="GKN-FO-pEG"/>
+                <outlet property="floatingLabel" destination="H05-up-Vux" id="Qjx-AG-N7e"/>
+                <outlet property="rightIconImageView" destination="MIN-c1-ycc" id="5ca-6x-jib"/>
+                <outlet property="rightIconImageviewHeightConstraint" destination="7Za-Ff-ryC" id="Brd-2U-AQh"/>
+                <outlet property="rightIconImageviewWidthConstraint" destination="9c4-FU-khC" id="ULa-qB-Hce"/>
+                <outlet property="textField" destination="gEJ-Ge-yhB" id="yNb-Mr-4mK"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="362" height="70"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jwa-Vl-iSd">
+                    <rect key="frame" x="0.0" y="0.0" width="362" height="50"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Dup-iS-3gi">
+                            <rect key="frame" x="15" y="15.5" width="332" height="19"/>
+                            <subviews>
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Placeholder" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gEJ-Ge-yhB">
+                                    <rect key="frame" x="0.0" y="0.0" width="332" height="19"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <fontDescription key="fontDescription" name="Gerbera-Light" family="Gerbera" pointSize="15"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </textField>
+                                <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="eye_on_icon" translatesAutoresizingMaskIntoConstraints="NO" id="MIN-c1-ycc">
+                                    <rect key="frame" x="0.0" y="-0.5" width="20" height="20"/>
+                                    <color key="tintColor" systemColor="labelColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="20" id="7Za-Ff-ryC"/>
+                                        <constraint firstAttribute="width" constant="20" id="9c4-FU-khC"/>
+                                    </constraints>
+                                </imageView>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="Dup-iS-3gi" firstAttribute="leading" secondItem="jwa-Vl-iSd" secondAttribute="leading" constant="15" id="0q3-n6-leP"/>
+                        <constraint firstItem="Dup-iS-3gi" firstAttribute="centerY" secondItem="jwa-Vl-iSd" secondAttribute="centerY" id="1xg-KB-UeA"/>
+                        <constraint firstAttribute="height" constant="50" id="Rt0-Sr-Ylx"/>
+                        <constraint firstAttribute="trailing" secondItem="Dup-iS-3gi" secondAttribute="trailing" constant="15" id="qD8-jg-ods"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="viewCornerRadius">
+                            <real key="value" value="8"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                            <real key="value" value="1"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                            <color key="value" name="BorderColor"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Floating Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H05-up-Vux" customClass="UIPaddableLabel" customModule="VPD_Crypto" customModuleProvider="target">
+                    <rect key="frame" x="20" y="17.5" width="82" height="15.5"/>
+                    <color key="backgroundColor" systemColor="labelColor"/>
+                    <fontDescription key="fontDescription" name="Gerbera-Light" family="Gerbera" pointSize="13"/>
+                    <color key="textColor" systemColor="systemGray6Color"/>
+                    <nil key="highlightedColor"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="topInset">
+                            <real key="value" value="2"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="bottomInset">
+                            <real key="value" value="2"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="leftInset">
+                            <real key="value" value="5"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="rightInset">
+                            <real key="value" value="5"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error message label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3wz-Ia-gnF">
+                    <rect key="frame" x="8" y="50" width="346" height="20"/>
+                    <fontDescription key="fontDescription" name="Gerbera-Light" family="Gerbera" pointSize="13"/>
+                    <color key="textColor" red="0.90588235289999997" green="0.054901960780000002" blue="0.0078431372550000003" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="3wz-Ia-gnF" secondAttribute="trailing" constant="8" id="Fk6-Wf-UMG"/>
+                <constraint firstItem="jwa-Vl-iSd" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="KSC-A2-6fm"/>
+                <constraint firstItem="3wz-Ia-gnF" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="8" id="Rdf-Aq-AZT"/>
+                <constraint firstItem="H05-up-Vux" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="fAG-qB-aJX"/>
+                <constraint firstItem="3wz-Ia-gnF" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="gYQ-Rg-2NH"/>
+                <constraint firstItem="jwa-Vl-iSd" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="m7E-lP-ehd"/>
+                <constraint firstItem="H05-up-Vux" firstAttribute="centerY" secondItem="jwa-Vl-iSd" secondAttribute="centerY" id="mhM-Gd-o0C"/>
+                <constraint firstItem="3wz-Ia-gnF" firstAttribute="top" secondItem="jwa-Vl-iSd" secondAttribute="bottom" id="taO-2H-42J"/>
+                <constraint firstItem="jwa-Vl-iSd" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="wfE-dz-bby"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-15.942028985507248" y="-178.125"/>
+        </view>
+    </objects>
+    <designables>
+        <designable name="H05-up-Vux">
+            <size key="intrinsicContentSize" width="82" height="15.5"/>
+        </designable>
+    </designables>
+    <resources>
+        <image name="eye_on_icon" width="24" height="24"/>
+        <namedColor name="BorderColor">
+            <color red="0.74117647058823533" green="0.74117647058823533" blue="0.74117647058823533" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
