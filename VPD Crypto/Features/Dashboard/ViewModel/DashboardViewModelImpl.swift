@@ -11,8 +11,12 @@ import RxSwift
 
 class DashboardViewModelImpl: BaseViewModel, IDashboardViewModel {
     
+    var showCoins: PublishSubject<Bool> = PublishSubject()
+    var hasFetchedCoins = false
+    var canFetchMoreCoins: Bool { currentPage < 50 }
     var user: PublishSubject<VPDUser> = PublishSubject()
     var coins: [Coin] = []
+    fileprivate var currentPage = 1
     
     fileprivate let remoteDatasource: IDashboardRemoteDatasource
     
@@ -31,7 +35,29 @@ class DashboardViewModelImpl: BaseViewModel, IDashboardViewModel {
         })
     }
     
-    func getCoins() {
+    func getCoins(isInitial: Bool) {
+        if isInitial {
+            currentPage = 1
+        } else {
+            currentPage += 1
+        }
+        
+        let params: BodyParam = [
+            "vs_currency": "usd",
+            "order": "market_cap_desc",
+            "per_page": 10,
+            "page": currentPage,
+            "sparkline": false
+        ]
+        
+        if canFetchMoreCoins {
+            subscribeAny(remoteDatasource.getCoins(params: params), success: { [weak self] coins in
+                guard let self = self else { return }
+                self.coins += coins
+                self.hasFetchedCoins = true
+                self.showCoins.onNext(true)
+            })
+        }
         
     }
     

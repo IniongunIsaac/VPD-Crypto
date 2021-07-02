@@ -9,11 +9,17 @@
 import Foundation
 import RxSwift
 
-protocol IDashboardViewModel {
+protocol IDashboardViewModel: Scopable {
     
     var user: PublishSubject<VPDUser> { get }
     
     var coins: [Coin] { get set }
     
-    func getCoins()
+    var showCoins: PublishSubject<Bool> { get }
+    
+    var hasFetchedCoins: Bool { get set }
+    
+    var canFetchMoreCoins: Bool { get }
+    
+    func getCoins(isInitial: Bool)
 }

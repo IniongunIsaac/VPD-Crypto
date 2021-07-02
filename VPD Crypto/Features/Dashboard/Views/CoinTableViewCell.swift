@@ -24,7 +24,7 @@ class CoinTableViewCell: UITableViewCell {
             coinImageView.setImageFromURL(url: $0.image, placeholderImage: R.image.bitcoin_icon(), cornerRadius: 0)
             currentPriceLabel.text = $0.currentPrice.currencyFormatted(symbol: "$")
             percentageLabel.text = "\($0.marketCapChangePercentage24H)%"
-            percentageLabel.textColor = $0.marketCapChangePercentage24H > 0 ? .green : .red
+            percentageLabel.textColor = $0.marketCapChangePercentage24H > 0 ? .appGreen : .appRed
         }
     }
 

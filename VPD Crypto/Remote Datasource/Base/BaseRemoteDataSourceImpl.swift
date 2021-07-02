@@ -31,7 +31,6 @@ class BaseRemoteDataSourceImpl: IBaseRemoteDataSource {
                     
                     //map the result of `responseString` above to the `responseType`
                     let requestResponse = try responseType.map(from: responseString)!
-                    printIfDebugOrStagingScheme(requestResponse.prettyPrinted, .success, isJsonResponse: true)
                     //return result in `requestResponse` above in the `successHandler`
                     return Observable.just(requestResponse)
                     

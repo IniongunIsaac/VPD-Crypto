@@ -8,56 +8,48 @@
 
 import UIKit
 
-class EmptyView: UIView {
+class EmptyView: BaseView {
 
     @IBOutlet var contentView: UIView!
     @IBOutlet weak var emptyIconImageView: UIImageView!
     @IBOutlet weak var messageLabel: UILabel!
     @IBOutlet weak var reloadIconImageView: UIImageView!
     
-    @IBInspectable var messageText: String? {
-        get { messageLabel.text }
+    override var nibName: String { R.nib.emptyView.name }
+    override var kContentView: UIView { contentView }
+    
+    @IBInspectable var messageText: String {
+        get { messageLabel.text.orEmpty }
         set { messageLabel.text = newValue }
     }
     
-    var reloadTapppedHandler: (() -> Void)?
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        self.isUserInteractionEnabled = true
-        setupTapGestures()
+    @IBInspectable var emptyIcon: UIImage? {
+        get { emptyIconImageView.image }
+        set { emptyIconImageView.image = newValue }
     }
     
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        commonInit()
+    @IBInspectable var bgColor: UIColor? {
+        get { contentView.backgroundColor }
+        set { contentView.backgroundColor = newValue }
     }
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        commonInit()
+    @IBInspectable var showRetryIcon: Bool {
+        get { reloadIconImageView.isHidden }
+        set { reloadIconImageView.showView(newValue) }
     }
     
-    override func prepareForInterfaceBuilder() {
-        super.prepareForInterfaceBuilder()
-        commonInit()
-        contentView.prepareForInterfaceBuilder()
+    @IBInspectable var showEmptyIcon: Bool {
+        get { emptyIconImageView.isHidden }
+        set { emptyIconImageView.showView(newValue) }
     }
     
-    fileprivate func commonInit() {
-        loadFromNib()
-        contentView.frame = bounds
-        contentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
-    }
+    var retryTapHandler: NoParamHandler?
     
-    fileprivate func loadFromNib() {
-        Bundle.main.loadNibNamed(R.nib.emptyView.name, owner: self, options: nil)
-        addSubview(contentView)
-    }
-    
-    fileprivate func setupTapGestures() {
+    override func configureViews() {
+        super.configureViews()
+        contentView.addClearBackground()
         reloadIconImageView.animateViewOnTapGesture { [weak self] in
-            self?.reloadTapppedHandler?()
+            self?.retryTapHandler?()
         }
     }
 }

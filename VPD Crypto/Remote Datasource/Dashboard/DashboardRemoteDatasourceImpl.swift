@@ -11,6 +11,7 @@ import RxSwift
 import FirebaseAuth
 import FirebaseFirestore
 import FirebaseFirestoreSwift
+import Alamofire
 
 class DashboardRemoteDatasourceImpl: BaseRemoteDataSourceImpl, IDashboardRemoteDatasource {
     
@@ -22,8 +23,8 @@ class DashboardRemoteDatasourceImpl: BaseRemoteDataSourceImpl, IDashboardRemoteD
         self.firestore = firestore
     }
     
-    func getCoins() -> Observable<[Coin]> {
-        makeAPIRequest(responseType: [Coin].self, url: RemoteDataSourceConstants.Endpoints.COINS)
+    func getCoins(params: BodyParam) -> Observable<[Coin]> {
+        makeAPIRequest(responseType: [Coin].self, url: RemoteDataSourceConstants.Endpoints.COINS, params: params, encoding: URLEncoding.default)
     }
     
     func getUserData() -> Observable<VPDUser> {

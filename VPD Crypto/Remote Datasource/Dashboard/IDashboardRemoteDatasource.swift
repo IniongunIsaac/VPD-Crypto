@@ -11,7 +11,7 @@ import RxSwift
 
 protocol IDashboardRemoteDatasource {
     
-    func getCoins() -> Observable<[Coin]>
+    func getCoins(params: BodyParam) -> Observable<[Coin]>
     
     func getUserData() -> Observable<VPDUser>
     

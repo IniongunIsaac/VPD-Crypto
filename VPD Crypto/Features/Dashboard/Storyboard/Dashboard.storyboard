@@ -33,19 +33,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="pnv-B7-GQ2">
-                                <rect key="frame" x="20" y="64" width="374" height="44"/>
+                                <rect key="frame" x="20" y="64" width="374" height="45"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="iGG-Rh-fnY">
-                                        <rect key="frame" x="0.0" y="0.0" width="319" height="44"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="319" height="45"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome Back!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Pz-N0-GLf">
-                                                <rect key="frame" x="0.0" y="0.0" width="319" height="16.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="319" height="17"/>
                                                 <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="14"/>
                                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Isaac Iniongun" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ATY-5L-Ead">
-                                                <rect key="frame" x="0.0" y="20.5" width="319" height="23.5"/>
+                                                <rect key="frame" x="0.0" y="21" width="319" height="24"/>
                                                 <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="20"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -53,7 +53,7 @@
                                         </subviews>
                                     </stackView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heart_filled_icon" translatesAutoresizingMaskIntoConstraints="NO" id="m3s-jA-1ov">
-                                        <rect key="frame" x="339" y="4.5" width="35" height="35"/>
+                                        <rect key="frame" x="339" y="5" width="35" height="35"/>
                                         <color key="tintColor" name="PrimaryColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="Cas-93-SaC"/>
@@ -63,12 +63,12 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Portfolio" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xuM-dx-Rvy">
-                                <rect key="frame" x="20" y="141" width="97.5" height="21"/>
+                                <rect key="frame" x="20" y="142" width="93" height="21.5"/>
                                 <fontDescription key="fontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="18"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4wq-um-vg2">
-                                <rect key="frame" x="20" y="172" width="374" height="220"/>
+                                <rect key="frame" x="20" y="173.5" width="374" height="220"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pYp-Gj-W5R" userLabel="Content View">
                                         <rect key="frame" x="0.0" y="0.0" width="630" height="220"/>
@@ -124,7 +124,7 @@
                                 <viewLayoutGuide key="frameLayoutGuide" id="IUd-uu-YmR"/>
                             </scrollView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5BD-rM-eUF">
-                                <rect key="frame" x="20" y="463" width="374" height="379"/>
+                                <rect key="frame" x="20" y="465" width="374" height="377"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="coinTableViewCell" rowHeight="80" id="mBg-l7-39r" customClass="CoinTableViewCell" customModule="VPD_Crypto" customModuleProvider="target">
@@ -141,29 +141,29 @@
                                                             <rect key="frame" x="0.0" y="0.0" width="374" height="70"/>
                                                             <subviews>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="lO9-xU-sdD">
-                                                                    <rect key="frame" x="15" y="17.5" width="344" height="35.5"/>
+                                                                    <rect key="frame" x="15" y="17" width="344" height="36.5"/>
                                                                     <subviews>
                                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bitcoin_icon" translatesAutoresizingMaskIntoConstraints="NO" id="I6r-fz-lof">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="35" height="35"/>
+                                                                            <rect key="frame" x="0.0" y="0.5" width="35" height="35"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="height" constant="35" id="9Q7-YO-xLe"/>
                                                                                 <constraint firstAttribute="width" constant="35" id="nsf-i6-Dgj"/>
                                                                             </constraints>
                                                                         </imageView>
                                                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Van-ae-1xE">
-                                                                            <rect key="frame" x="43" y="0.0" width="301" height="35.5"/>
+                                                                            <rect key="frame" x="43" y="0.0" width="301" height="36.5"/>
                                                                             <subviews>
                                                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="XpA-Iz-D9B" userLabel="Name Stack View">
-                                                                                    <rect key="frame" x="0.0" y="0.0" width="100" height="35.5"/>
+                                                                                    <rect key="frame" x="0.0" y="0.0" width="94" height="36.5"/>
                                                                                     <subviews>
                                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bitcoin" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dA2-RD-Esv">
-                                                                                            <rect key="frame" x="0.0" y="0.0" width="100" height="19"/>
+                                                                                            <rect key="frame" x="0.0" y="0.0" width="94" height="19.5"/>
                                                                                             <fontDescription key="fontDescription" name="SFProDisplay-Semibold" family="SF Pro Display" pointSize="16"/>
                                                                                             <nil key="textColor"/>
                                                                                             <nil key="highlightedColor"/>
                                                                                         </label>
                                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BTC" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z2f-c4-YWM">
-                                                                                            <rect key="frame" x="0.0" y="19" width="100" height="16.5"/>
+                                                                                            <rect key="frame" x="0.0" y="19.5" width="94" height="17"/>
                                                                                             <fontDescription key="fontDescription" name="SFProDisplay-Semibold" family="SF Pro Display" pointSize="14"/>
                                                                                             <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                             <nil key="highlightedColor"/>
@@ -171,16 +171,16 @@
                                                                                     </subviews>
                                                                                 </stackView>
                                                                                 <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="Vyg-GD-YXj" userLabel="Price Stack View">
-                                                                                    <rect key="frame" x="120" y="0.0" width="181" height="35.5"/>
+                                                                                    <rect key="frame" x="114" y="0.0" width="187" height="36.5"/>
                                                                                     <subviews>
                                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$33,050.90" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Kg-af-1iT">
-                                                                                            <rect key="frame" x="0.0" y="0.0" width="181" height="19"/>
+                                                                                            <rect key="frame" x="0.0" y="0.0" width="187" height="19.5"/>
                                                                                             <fontDescription key="fontDescription" name="SFProDisplay-Semibold" family="SF Pro Display" pointSize="16"/>
                                                                                             <nil key="textColor"/>
                                                                                             <nil key="highlightedColor"/>
                                                                                         </label>
                                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-25.89%" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6fs-S7-RNH">
-                                                                                            <rect key="frame" x="0.0" y="19" width="181" height="16.5"/>
+                                                                                            <rect key="frame" x="0.0" y="19.5" width="187" height="17"/>
                                                                                             <fontDescription key="fontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="14"/>
                                                                                             <color key="textColor" systemColor="systemRedColor"/>
                                                                                             <nil key="highlightedColor"/>
@@ -215,6 +215,7 @@
                                                     </subviews>
                                                 </stackView>
                                             </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstItem="tIo-Wu-auc" firstAttribute="leading" secondItem="Jsy-83-ftH" secondAttribute="leading" id="Cl5-ZR-Zmo"/>
                                                 <constraint firstAttribute="trailing" secondItem="tIo-Wu-auc" secondAttribute="trailing" id="PIi-fo-ujI"/>
@@ -222,6 +223,7 @@
                                                 <constraint firstAttribute="bottom" secondItem="tIo-Wu-auc" secondAttribute="bottom" id="ZUu-MH-NvO"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="coinImageView" destination="I6r-fz-lof" id="3uC-4l-GgG"/>
                                             <outlet property="currentPriceLabel" destination="5Kg-af-1iT" id="Q9n-BE-uK7"/>
@@ -234,7 +236,7 @@
                                 </prototypes>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="All Coins" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nx9-1f-ecq">
-                                <rect key="frame" x="20" y="422" width="71" height="21"/>
+                                <rect key="frame" x="20" y="423.5" width="68" height="21.5"/>
                                 <fontDescription key="fontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="18"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -259,11 +261,13 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="allCoinsLabel" destination="Nx9-1f-ecq" id="nfD-10-Bi1"/>
                         <outlet property="allCoinsTableView" destination="5BD-rM-eUF" id="xpB-CR-Eq5"/>
                         <outlet property="bitcoinPortfolioView" destination="PGj-Zl-nbA" id="w1w-Of-VWN"/>
                         <outlet property="etheriumPortfolioView" destination="tDv-LJ-dQE" id="yRG-PT-VSI"/>
                         <outlet property="favoritesImageView" destination="m3s-jA-1ov" id="bSP-Nq-YpC"/>
                         <outlet property="usernameLabel" destination="ATY-5L-Ead" id="vhJ-zl-nNU"/>
+                        <outlet property="usernameStackView" destination="pnv-B7-GQ2" id="IE9-fg-b66"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

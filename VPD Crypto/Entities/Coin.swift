@@ -11,16 +11,17 @@ import Foundation
 struct Coin: Codable, Scopable {
     let id, symbol, name: String
     let image: String
-    let currentPrice, marketCap, marketCapRank, fullyDilutedValuation: Int
-    let totalVolume, high24H, low24H: Int
-    let priceChange24H, priceChangePercentage24H, marketCapChange24H, marketCapChangePercentage24H: Double
-    let circulatingSupply, totalSupply, maxSupply, ath: Int
-    let athChangePercentage: Double
-    let athDate: String
-    let atl, atlChangePercentage: Double
-    let atlDate: String
+    let currentPrice, marketCapChangePercentage24H: Double
+    let marketCap, marketCapRank, fullyDilutedValuation: Double?
+    let totalVolume, high24H, low24H: Double?
+    let priceChange24H, priceChangePercentage24H, marketCapChange24H: Double?
+    let circulatingSupply, totalSupply, maxSupply, ath: Double?
+    let athChangePercentage: Double?
+    let athDate: String?
+    let atl, atlChangePercentage: Double?
+    let atlDate: String?
     let roi: CoinROI?
-    let lastUpdated: String
+    let lastUpdated: String?
     
     enum CodingKeys: String, CodingKey {
         case id, symbol, name, image
