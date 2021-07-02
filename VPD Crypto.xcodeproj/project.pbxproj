@@ -10,6 +10,13 @@
 		144A5B29268FB9410015898D /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144A5B28268FB9410015898D /* Currency.swift */; };
 		144A5B2C268FBA7B0015898D /* CoinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144A5B2B268FBA7B0015898D /* CoinView.swift */; };
 		144A5B2E268FBA990015898D /* CoinView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 144A5B2D268FBA990015898D /* CoinView.xib */; };
+		144A5B30268FCE8A0015898D /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 144A5B2F268FCE8A0015898D /* README.md */; };
+		144A5B38268FD4660015898D /* create_account.png in Resources */ = {isa = PBXBuildFile; fileRef = 144A5B32268FD4650015898D /* create_account.png */; };
+		144A5B39268FD4660015898D /* auth_options.png in Resources */ = {isa = PBXBuildFile; fileRef = 144A5B33268FD4650015898D /* auth_options.png */; };
+		144A5B3A268FD4660015898D /* dashboard.png in Resources */ = {isa = PBXBuildFile; fileRef = 144A5B34268FD4650015898D /* dashboard.png */; };
+		144A5B3B268FD4660015898D /* favorites.png in Resources */ = {isa = PBXBuildFile; fileRef = 144A5B35268FD4650015898D /* favorites.png */; };
+		144A5B3C268FD4660015898D /* login.png in Resources */ = {isa = PBXBuildFile; fileRef = 144A5B36268FD4650015898D /* login.png */; };
+		144A5B3D268FD4660015898D /* coin_details.png in Resources */ = {isa = PBXBuildFile; fileRef = 144A5B37268FD4660015898D /* coin_details.png */; };
 		144AD24825028CF200394E59 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144AD24725028CF200394E59 /* AppDelegate.swift */; };
 		144AD24A25028CF200394E59 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144AD24925028CF200394E59 /* SceneDelegate.swift */; };
 		144AD25125028CF400394E59 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 144AD25025028CF400394E59 /* Assets.xcassets */; };
@@ -127,6 +134,13 @@
 		144A5B28268FB9410015898D /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		144A5B2B268FBA7B0015898D /* CoinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinView.swift; sourceTree = "<group>"; };
 		144A5B2D268FBA990015898D /* CoinView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CoinView.xib; sourceTree = "<group>"; };
+		144A5B2F268FCE8A0015898D /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		144A5B32268FD4650015898D /* create_account.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = create_account.png; sourceTree = "<group>"; };
+		144A5B33268FD4650015898D /* auth_options.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = auth_options.png; sourceTree = "<group>"; };
+		144A5B34268FD4650015898D /* dashboard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dashboard.png; sourceTree = "<group>"; };
+		144A5B35268FD4650015898D /* favorites.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = favorites.png; sourceTree = "<group>"; };
+		144A5B36268FD4650015898D /* login.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login.png; sourceTree = "<group>"; };
+		144A5B37268FD4660015898D /* coin_details.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coin_details.png; sourceTree = "<group>"; };
 		144AD24425028CF200394E59 /* VPD Crypto-Dev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "VPD Crypto-Dev.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		144AD24725028CF200394E59 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		144AD24925028CF200394E59 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -279,13 +293,28 @@
 			path = "Coin View";
 			sourceTree = "<group>";
 		};
+		144A5B31268FCF040015898D /* Screenshots */ = {
+			isa = PBXGroup;
+			children = (
+				144A5B33268FD4650015898D /* auth_options.png */,
+				144A5B37268FD4660015898D /* coin_details.png */,
+				144A5B32268FD4650015898D /* create_account.png */,
+				144A5B34268FD4650015898D /* dashboard.png */,
+				144A5B35268FD4650015898D /* favorites.png */,
+				144A5B36268FD4650015898D /* login.png */,
+			);
+			path = Screenshots;
+			sourceTree = "<group>";
+		};
 		144AD23B25028CF200394E59 = {
 			isa = PBXGroup;
 			children = (
+				144A5B2F268FCE8A0015898D /* README.md */,
 				144AD285250292C000394E59 /* R.generated.swift */,
 				144AD2822502919900394E59 /* .gitignore */,
 				144AD27725028FE700394E59 /* Podfile.lock */,
 				147DCA57268E675D008F880D /* GoogleService-Info.plist */,
+				144A5B31268FCF040015898D /* Screenshots */,
 				144AD24625028CF200394E59 /* VPD Crypto */,
 				144AD25D25028CF400394E59 /* VPD CryptoTests */,
 				144AD26825028CF400394E59 /* VPD CryptoUITests */,
@@ -824,10 +853,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				144A5B39268FD4660015898D /* auth_options.png in Resources */,
 				1454CEA02512AD2A00AD1BF1 /* Auth.storyboard in Resources */,
 				145BF1FA256429350052E503 /* SF-Pro-Display-Thin.otf in Resources */,
 				145BF1FF256429350052E503 /* SF-Pro-Display-RegularItalic.otf in Resources */,
 				144AD2832502919900394E59 /* .gitignore in Resources */,
+				144A5B3D268FD4660015898D /* coin_details.png in Resources */,
+				144A5B3B268FD4660015898D /* favorites.png in Resources */,
+				144A5B3C268FD4660015898D /* login.png in Resources */,
 				145BF1FD256429350052E503 /* SF-Pro-Display-HeavyItalic.otf in Resources */,
 				145BF1F4256429350052E503 /* SF-Pro-Display-ThinItalic.otf in Resources */,
 				145BF1FB256429350052E503 /* SF-Pro-Display-MediumItalic.otf in Resources */,
@@ -836,11 +869,14 @@
 				144AD25125028CF400394E59 /* Assets.xcassets in Resources */,
 				145BF1F6256429350052E503 /* SF-Pro-Display-Heavy.otf in Resources */,
 				145BF200256429350052E503 /* SF-Pro-Display-Black.otf in Resources */,
+				144A5B30268FCE8A0015898D /* README.md in Resources */,
 				145BF1F5256429350052E503 /* SF-Pro-Display-Bold.otf in Resources */,
 				147DCA58268E675D008F880D /* GoogleService-Info.plist in Resources */,
+				144A5B3A268FD4660015898D /* dashboard.png in Resources */,
 				145BF207256429350052E503 /* SF-Pro-Display-BlackItalic.otf in Resources */,
 				145BF1F9256429350052E503 /* SF-Pro-Display-SemiboldItalic.otf in Resources */,
 				147DCA76268E8BEB008F880D /* PortfolioBalanceView.xib in Resources */,
+				144A5B38268FD4660015898D /* create_account.png in Resources */,
 				147DCA5D268E6EA8008F880D /* Dashboard.storyboard in Resources */,
 				145BF1F8256429350052E503 /* SF-Pro-Display-Semibold.otf in Resources */,
 				145BF1EF256429350052E503 /* SF-Pro-Display-LightItalic.otf in Resources */,

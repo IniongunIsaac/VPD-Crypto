@@ -23,9 +23,13 @@ protocol IDashboardViewModel: Scopable {
     
     var favoriteCoins: PublishSubject<[Coin]> { get }
     
+    var showAuthOptions: PublishSubject<Bool> { get }
+    
     func getCoins(isInitial: Bool)
     
     func saveFavoriteCoin(_ coin: Coin)
     
     func getFavoriteCoins()
+    
+    func signOut()
 }

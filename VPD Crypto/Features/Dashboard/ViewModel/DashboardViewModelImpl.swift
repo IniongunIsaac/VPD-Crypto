@@ -17,6 +17,7 @@ class DashboardViewModelImpl: BaseViewModel, IDashboardViewModel {
     var user: PublishSubject<VPDUser> = PublishSubject()
     var coins: [Coin] = []
     var favoriteCoins: PublishSubject<[Coin]> = PublishSubject()
+    var showAuthOptions: PublishSubject<Bool> = PublishSubject()
     
     fileprivate var currentPage = 1
     
@@ -72,6 +73,12 @@ class DashboardViewModelImpl: BaseViewModel, IDashboardViewModel {
     func getFavoriteCoins() {
         subscribeAny(remoteDatasource.getFavoriteCoins(), success: { [weak self] coins in
             self?.favoriteCoins.onNext(coins)
+        })
+    }
+    
+    func signOut() {
+        subscribeAny(remoteDatasource.signOut(), success: { [weak self] in
+            self?.showAuthOptions.onNext(true)
         })
     }
     

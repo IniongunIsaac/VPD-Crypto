@@ -1,2 +1,2 @@
-# Spottr-ios
+# VPD Crypto
 

@@ -17,6 +17,7 @@ class DashboardViewController: BaseViewController {
     @IBOutlet weak var etheriumPortfolioView: PortfolioBalanceView!
     @IBOutlet weak var allCoinsTableView: UITableView!
     @IBOutlet weak var allCoinsLabel: UILabel!
+    @IBOutlet weak var signoutImageView: UIImageView!
     
     var dashboardViewModel: IDashboardViewModel!
     override func getViewModel() -> BaseViewModel { dashboardViewModel as! BaseViewModel }
@@ -57,6 +58,10 @@ class DashboardViewController: BaseViewController {
         }
         
         showCoins()
+        
+        signoutImageView.animateViewOnTapGesture { [weak self] in
+            self?.dashboardViewModel.signOut()
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -81,6 +86,15 @@ class DashboardViewController: BaseViewController {
         super.setChildViewControllerObservers()
         observeUserData()
         observeShowCoins()
+        observeShowAuthOptions()
+    }
+    
+    fileprivate func observeShowAuthOptions() {
+        dashboardViewModel.showAuthOptions.bind { [weak self] show in
+            if show {
+                self?.setViewControllers(with: R.storyboard.auth.authOptionsViewController()!, animate: true)
+            }
+        }.disposed(by: disposeBag)
     }
     
     fileprivate func observeUserData() {

@@ -19,4 +19,5 @@ protocol IDashboardRemoteDatasource {
     
     func getFavoriteCoins() -> Observable<[Coin]>
     
+    func signOut() -> Observable<Void>
 }

@@ -38,4 +38,19 @@ class DashboardRemoteDatasourceImpl: BaseRemoteDataSourceImpl, IDashboardRemoteD
     func getFavoriteCoins() -> Observable<[Coin]> {
         firestore.collection(RemoteDataSourceConstants.COINS_COLLECTION).rxGetDocuments()
     }
+    
+    func signOut() -> Observable<Void> {
+        return Observable.create { observer in
+            
+            do {
+                try self.auth.signOut()
+                observer.onNext(())
+                observer.onCompleted()
+            } catch let error {
+                observer.onError(error)
+            }
+            
+            return Disposables.create()
+        }
+    }
 }
