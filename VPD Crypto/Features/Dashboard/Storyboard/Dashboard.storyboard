@@ -1,30 +1,309 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17150" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17122"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="SF-Pro-Display-Bold.otf">
+            <string>SFProDisplay-Bold</string>
+        </array>
+        <array key="SF-Pro-Display-Medium.otf">
+            <string>SFProDisplay-Medium</string>
+        </array>
+        <array key="SF-Pro-Display-Regular.otf">
+            <string>SFProDisplay-Regular</string>
+        </array>
+        <array key="SF-Pro-Display-Semibold.otf">
+            <string>SFProDisplay-Semibold</string>
+        </array>
+    </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--Dashboard View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController id="Y6W-OH-hqX" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="dashboardViewController" id="Y6W-OH-hqX" customClass="DashboardViewController" customModule="VPD_Crypto" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="pnv-B7-GQ2">
+                                <rect key="frame" x="20" y="64" width="374" height="45"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="iGG-Rh-fnY">
+                                        <rect key="frame" x="0.0" y="0.0" width="319" height="45"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome Back!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Pz-N0-GLf">
+                                                <rect key="frame" x="0.0" y="0.0" width="319" height="17"/>
+                                                <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="14"/>
+                                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Isaac Iniongun" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ATY-5L-Ead">
+                                                <rect key="frame" x="0.0" y="21" width="319" height="24"/>
+                                                <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heart_filled_icon" translatesAutoresizingMaskIntoConstraints="NO" id="m3s-jA-1ov">
+                                        <rect key="frame" x="339" y="5" width="35" height="35"/>
+                                        <color key="tintColor" name="PrimaryColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="Cas-93-SaC"/>
+                                            <constraint firstAttribute="width" constant="35" id="x7w-f1-Bp9"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Portfolio" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xuM-dx-Rvy">
+                                <rect key="frame" x="20" y="142" width="93" height="21.5"/>
+                                <fontDescription key="fontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="18"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4wq-um-vg2">
+                                <rect key="frame" x="20" y="173.5" width="374" height="220"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pYp-Gj-W5R" userLabel="Content View">
+                                        <rect key="frame" x="0.0" y="0.0" width="670" height="220"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="ZlS-pJ-5Li">
+                                                <rect key="frame" x="0.0" y="0.0" width="670" height="220"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" horizontalHuggingPriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="PGj-Zl-nbA" customClass="PortfolioBalanceView" customModule="VPD_Crypto" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="320" height="220"/>
+                                                        <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="220" id="KbV-7a-FHW"/>
+                                                            <constraint firstAttribute="width" constant="320" id="UiI-Ci-JYL"/>
+                                                        </constraints>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="image" keyPath="coinIcon" value="bitcoin_icon"/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="coinName" value="BTC"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" horizontalHuggingPriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="tDv-LJ-dQE" customClass="PortfolioBalanceView" customModule="VPD_Crypto" customModuleProvider="target">
+                                                        <rect key="frame" x="350" y="0.0" width="320" height="220"/>
+                                                        <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="220" id="5q4-Ru-P8r"/>
+                                                            <constraint firstAttribute="width" constant="320" id="Rzt-wg-UfZ"/>
+                                                        </constraints>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="image" keyPath="coinIcon" value="ethereum_icon"/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="coinName" value="ETH"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="ZlS-pJ-5Li" secondAttribute="trailing" id="FG3-iL-74D"/>
+                                            <constraint firstItem="ZlS-pJ-5Li" firstAttribute="top" secondItem="pYp-Gj-W5R" secondAttribute="top" id="JqE-37-erT"/>
+                                            <constraint firstItem="ZlS-pJ-5Li" firstAttribute="leading" secondItem="pYp-Gj-W5R" secondAttribute="leading" id="K8m-hK-XMi"/>
+                                            <constraint firstAttribute="bottom" secondItem="ZlS-pJ-5Li" secondAttribute="bottom" id="M3u-KI-Vnx"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="pYp-Gj-W5R" firstAttribute="trailing" secondItem="XeB-xb-8BM" secondAttribute="trailing" id="W5u-fa-lYK"/>
+                                    <constraint firstItem="pYp-Gj-W5R" firstAttribute="leading" secondItem="XeB-xb-8BM" secondAttribute="leading" id="adG-YL-Gqf"/>
+                                    <constraint firstItem="pYp-Gj-W5R" firstAttribute="top" secondItem="XeB-xb-8BM" secondAttribute="top" id="aiO-ca-oHs"/>
+                                    <constraint firstItem="pYp-Gj-W5R" firstAttribute="bottom" secondItem="XeB-xb-8BM" secondAttribute="bottom" id="mx4-vd-Vl6"/>
+                                    <constraint firstItem="pYp-Gj-W5R" firstAttribute="height" secondItem="IUd-uu-YmR" secondAttribute="height" id="oxh-4A-5Cg"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="XeB-xb-8BM"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="IUd-uu-YmR"/>
+                            </scrollView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5BD-rM-eUF">
+                                <rect key="frame" x="20" y="465" width="374" height="377"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="coinTableViewCell" rowHeight="80" id="mBg-l7-39r" customClass="CoinTableViewCell" customModule="VPD_Crypto" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="24.5" width="374" height="80"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mBg-l7-39r" id="Jsy-83-ftH">
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="80"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="tIo-Wu-auc">
+                                                    <rect key="frame" x="0.0" y="0.0" width="374" height="80"/>
+                                                    <subviews>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FJT-3p-WmB">
+                                                            <rect key="frame" x="0.0" y="0.0" width="374" height="70"/>
+                                                            <subviews>
+                                                                <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="lO9-xU-sdD">
+                                                                    <rect key="frame" x="15" y="17" width="344" height="36.5"/>
+                                                                    <subviews>
+                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bitcoin_icon" translatesAutoresizingMaskIntoConstraints="NO" id="I6r-fz-lof">
+                                                                            <rect key="frame" x="0.0" y="0.5" width="35" height="35"/>
+                                                                            <constraints>
+                                                                                <constraint firstAttribute="height" constant="35" id="9Q7-YO-xLe"/>
+                                                                                <constraint firstAttribute="width" constant="35" id="nsf-i6-Dgj"/>
+                                                                            </constraints>
+                                                                        </imageView>
+                                                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Van-ae-1xE">
+                                                                            <rect key="frame" x="43" y="0.0" width="301" height="36.5"/>
+                                                                            <subviews>
+                                                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="XpA-Iz-D9B" userLabel="Name Stack View">
+                                                                                    <rect key="frame" x="0.0" y="0.0" width="94" height="36.5"/>
+                                                                                    <subviews>
+                                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bitcoin" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dA2-RD-Esv">
+                                                                                            <rect key="frame" x="0.0" y="0.0" width="94" height="19.5"/>
+                                                                                            <fontDescription key="fontDescription" name="SFProDisplay-Semibold" family="SF Pro Display" pointSize="16"/>
+                                                                                            <nil key="textColor"/>
+                                                                                            <nil key="highlightedColor"/>
+                                                                                        </label>
+                                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BTC" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z2f-c4-YWM">
+                                                                                            <rect key="frame" x="0.0" y="19.5" width="94" height="17"/>
+                                                                                            <fontDescription key="fontDescription" name="SFProDisplay-Semibold" family="SF Pro Display" pointSize="14"/>
+                                                                                            <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                            <nil key="highlightedColor"/>
+                                                                                        </label>
+                                                                                    </subviews>
+                                                                                </stackView>
+                                                                                <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="Vyg-GD-YXj" userLabel="Price Stack View">
+                                                                                    <rect key="frame" x="114" y="0.0" width="187" height="36.5"/>
+                                                                                    <subviews>
+                                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$33,050.90" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Kg-af-1iT">
+                                                                                            <rect key="frame" x="0.0" y="0.0" width="187" height="19.5"/>
+                                                                                            <fontDescription key="fontDescription" name="SFProDisplay-Semibold" family="SF Pro Display" pointSize="16"/>
+                                                                                            <nil key="textColor"/>
+                                                                                            <nil key="highlightedColor"/>
+                                                                                        </label>
+                                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-25.89%" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6fs-S7-RNH">
+                                                                                            <rect key="frame" x="0.0" y="19.5" width="187" height="17"/>
+                                                                                            <fontDescription key="fontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="14"/>
+                                                                                            <color key="textColor" systemColor="systemRedColor"/>
+                                                                                            <nil key="highlightedColor"/>
+                                                                                        </label>
+                                                                                    </subviews>
+                                                                                </stackView>
+                                                                            </subviews>
+                                                                        </stackView>
+                                                                    </subviews>
+                                                                </stackView>
+                                                            </subviews>
+                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <constraints>
+                                                                <constraint firstItem="lO9-xU-sdD" firstAttribute="centerY" secondItem="FJT-3p-WmB" secondAttribute="centerY" id="6U5-rh-oca"/>
+                                                                <constraint firstAttribute="height" constant="70" id="RgJ-DI-kHW"/>
+                                                                <constraint firstItem="lO9-xU-sdD" firstAttribute="leading" secondItem="FJT-3p-WmB" secondAttribute="leading" constant="15" id="XDj-ua-wJJ"/>
+                                                                <constraint firstAttribute="trailing" secondItem="lO9-xU-sdD" secondAttribute="trailing" constant="15" id="vIJ-KO-bma"/>
+                                                            </constraints>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                    <real key="value" value="8"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
+                                                        </view>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lam-ds-g81" userLabel="Separator View">
+                                                            <rect key="frame" x="0.0" y="70" width="374" height="10"/>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="10" id="lNv-LI-PxI"/>
+                                                            </constraints>
+                                                        </view>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="tIo-Wu-auc" firstAttribute="leading" secondItem="Jsy-83-ftH" secondAttribute="leading" id="Cl5-ZR-Zmo"/>
+                                                <constraint firstAttribute="trailing" secondItem="tIo-Wu-auc" secondAttribute="trailing" id="PIi-fo-ujI"/>
+                                                <constraint firstItem="tIo-Wu-auc" firstAttribute="top" secondItem="Jsy-83-ftH" secondAttribute="top" id="Qr9-BU-aU8"/>
+                                                <constraint firstAttribute="bottom" secondItem="tIo-Wu-auc" secondAttribute="bottom" id="ZUu-MH-NvO"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="coinImageView" destination="I6r-fz-lof" id="3uC-4l-GgG"/>
+                                            <outlet property="currentPriceLabel" destination="5Kg-af-1iT" id="Q9n-BE-uK7"/>
+                                            <outlet property="detailsView" destination="FJT-3p-WmB" id="JcO-PD-afO"/>
+                                            <outlet property="nameLabel" destination="dA2-RD-Esv" id="91w-CC-m2O"/>
+                                            <outlet property="percentageLabel" destination="6fs-S7-RNH" id="QBF-SG-9kr"/>
+                                            <outlet property="symbolLabel" destination="z2f-c4-YWM" id="yUp-mF-oTa"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="All Coins" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nx9-1f-ecq">
+                                <rect key="frame" x="20" y="423.5" width="68" height="21.5"/>
+                                <fontDescription key="fontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="18"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                        <constraints>
+                            <constraint firstItem="5BD-rM-eUF" firstAttribute="top" secondItem="Nx9-1f-ecq" secondAttribute="bottom" constant="20" id="2xc-39-r9j"/>
+                            <constraint firstItem="Nx9-1f-ecq" firstAttribute="top" secondItem="4wq-um-vg2" secondAttribute="bottom" constant="30" id="8EP-D1-b2k"/>
+                            <constraint firstItem="Nx9-1f-ecq" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="Kvh-mx-Bnp"/>
+                            <constraint firstItem="5BD-rM-eUF" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="PVZ-B8-RoM"/>
+                            <constraint firstItem="xuM-dx-Rvy" firstAttribute="top" secondItem="pnv-B7-GQ2" secondAttribute="bottom" constant="33" id="RQK-CU-1hM"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="5BD-rM-eUF" secondAttribute="trailing" constant="20" id="WKH-RL-Rdf"/>
+                            <constraint firstItem="4wq-um-vg2" firstAttribute="top" secondItem="xuM-dx-Rvy" secondAttribute="bottom" constant="10" id="WTx-qA-NVQ"/>
+                            <constraint firstItem="pnv-B7-GQ2" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="20" id="ZvD-4q-djp"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="pnv-B7-GQ2" secondAttribute="trailing" constant="20" id="aTT-AB-UuG"/>
+                            <constraint firstItem="xuM-dx-Rvy" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="ekf-mg-Jj8"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="4wq-um-vg2" secondAttribute="trailing" constant="20" id="krg-IS-UCL"/>
+                            <constraint firstItem="4wq-um-vg2" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="l0H-xI-DLI"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="5BD-rM-eUF" secondAttribute="bottom" constant="20" id="wXF-7T-lBu"/>
+                            <constraint firstItem="pnv-B7-GQ2" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="yBW-vh-OhL"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="allCoinsTableView" destination="5BD-rM-eUF" id="xpB-CR-Eq5"/>
+                        <outlet property="bitcoinPortfolioView" destination="PGj-Zl-nbA" id="w1w-Of-VWN"/>
+                        <outlet property="etheriumPortfolioView" destination="tDv-LJ-dQE" id="yRG-PT-VSI"/>
+                        <outlet property="favoritesImageView" destination="m3s-jA-1ov" id="bSP-Nq-YpC"/>
+                        <outlet property="usernameLabel" destination="ATY-5L-Ead" id="vhJ-zl-nNU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="50.724637681159422" y="118.52678571428571"/>
+        </scene>
+        <!--Favorites View Controller-->
+        <scene sceneID="wsp-E2-jgb">
+            <objects>
+                <viewController storyboardIdentifier="favoritesViewController" id="DeG-Gm-774" customClass="FavoritesViewController" customModule="VPD_Crypto" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pu8-el-I0m">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="oiu-jY-Xsa"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cFf-kf-yMH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="761" y="119"/>
         </scene>
     </scenes>
     <resources>
+        <image name="bitcoin_icon" width="64" height="64"/>
+        <image name="ethereum_icon" width="155" height="256"/>
+        <image name="heart_filled_icon" width="48" height="48"/>
+        <namedColor name="PrimaryColor">
+            <color red="0.0" green="0.46299999952316284" blue="0.70999997854232788" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="opaqueSeparatorColor">
+            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemIndigoColor">
+            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

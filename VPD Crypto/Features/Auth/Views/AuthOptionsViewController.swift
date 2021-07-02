@@ -8,10 +8,13 @@
 
 import UIKit
 
-class AuthOptionsViewController: UIViewController {
+class AuthOptionsViewController: BaseViewController {
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    var authViewModel: IAuthViewModel!
+    override func getViewModel() -> BaseViewModel { authViewModel as! BaseViewModel }
+    
+    override func configureViews() {
+        super.configureViews()
         hideNavBar()
     }
 
@@ -21,6 +24,19 @@ class AuthOptionsViewController: UIViewController {
     
     @IBAction func loginButtonTapped(_ sender: Any) {
         pushViewController(R.storyboard.auth.loginViewController()!)
+    }
+    
+    override func setChildViewControllerObservers() {
+        super.setChildViewControllerObservers()
+        observeShowDashboard()
+    }
+    
+    fileprivate func observeShowDashboard() {
+        authViewModel.showDashboard.bind { [weak self] show in
+            if show {
+                self?.navigateToDashboard()
+            }
+        }.disposed(by: disposeBag)
     }
     
 }

@@ -177,12 +177,6 @@ func currentYearLastTwoDigits() -> Int {
     return Int(currentYear()[2,3])!
 }
 
-extension Collection where Iterator.Element == Int {
-    var seatsString: String {
-        return String(describing: self.compactMap { $0 }).replacingOccurrences(of: "[", with: "").replacingOccurrences(of: "]", with: "")
-    }
-}
-
 extension Data {
     var mbSize: Float {
         return Float(Float(self.count) / 1048576.0)
@@ -234,6 +228,16 @@ extension Int {
         currencyFormatter.numberStyle = .none
         
         return "₦\(currencyFormatter.string(from: NSNumber(value: self))!)"
+    }
+    
+    func currencyFormatted(symbol: String = "₦") -> String {
+        let currencyFormatter = NumberFormatter()
+        currencyFormatter.groupingSeparator = ","
+        currencyFormatter.groupingSize = 3
+        currencyFormatter.usesGroupingSeparator = true
+        currencyFormatter.numberStyle = .none
+        
+        return "\(symbol)\(currencyFormatter.string(from: NSNumber(value: self))!)"
     }
  
     var double: Double {

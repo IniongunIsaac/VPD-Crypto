@@ -71,7 +71,7 @@ class LoginViewController: BaseViewController {
     fileprivate func observeShowDashboard() {
         authViewModel.showDashboard.bind { [weak self] show in
             if show {
-                self?.showAlert(message: "Show Dashboard!", type: .success)
+                self?.navigateToDashboard()
             }
         }.disposed(by: disposeBag)
     }

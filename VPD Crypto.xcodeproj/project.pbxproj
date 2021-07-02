@@ -83,7 +83,10 @@
 		147DCA6C268E7CA4008F880D /* Coin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147DCA6B268E7CA4008F880D /* Coin.swift */; };
 		147DCA6E268E7CD5008F880D /* CoinROI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147DCA6D268E7CD5008F880D /* CoinROI.swift */; };
 		147DCA70268E881D008F880D /* DashboardDependencyInjections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147DCA6F268E881D008F880D /* DashboardDependencyInjections.swift */; };
+		147DCA74268E8BDF008F880D /* PortfolioBalanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147DCA73268E8BDF008F880D /* PortfolioBalanceView.swift */; };
+		147DCA76268E8BEB008F880D /* PortfolioBalanceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 147DCA75268E8BEB008F880D /* PortfolioBalanceView.xib */; };
 		147F857525653E1700754007 /* AuthOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147F857425653E1700754007 /* AuthOptionsViewController.swift */; };
+		14844849268EB2C90093D287 /* CoinTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14844848268EB2C90093D287 /* CoinTableViewCell.swift */; };
 		14B9EAD625633A4400A9D4D6 /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B9EAD525633A4300A9D4D6 /* EmptyView.swift */; };
 		14B9EADB25633A5700A9D4D6 /* EmptyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14B9EADA25633A5700A9D4D6 /* EmptyView.xib */; };
 		14C23DA025034ABF00614E69 /* RemoteDataSource+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C23D9F25034ABF00614E69 /* RemoteDataSource+Extensions.swift */; };
@@ -199,7 +202,10 @@
 		147DCA6B268E7CA4008F880D /* Coin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coin.swift; sourceTree = "<group>"; };
 		147DCA6D268E7CD5008F880D /* CoinROI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinROI.swift; sourceTree = "<group>"; };
 		147DCA6F268E881D008F880D /* DashboardDependencyInjections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardDependencyInjections.swift; sourceTree = "<group>"; };
+		147DCA73268E8BDF008F880D /* PortfolioBalanceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioBalanceView.swift; sourceTree = "<group>"; };
+		147DCA75268E8BEB008F880D /* PortfolioBalanceView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PortfolioBalanceView.xib; sourceTree = "<group>"; };
 		147F857425653E1700754007 /* AuthOptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthOptionsViewController.swift; sourceTree = "<group>"; };
+		14844848268EB2C90093D287 /* CoinTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinTableViewCell.swift; sourceTree = "<group>"; };
 		14B9EAD525633A4300A9D4D6 /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
 		14B9EADA25633A5700A9D4D6 /* EmptyView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyView.xib; sourceTree = "<group>"; };
 		14C23D9F25034ABF00614E69 /* RemoteDataSource+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RemoteDataSource+Extensions.swift"; sourceTree = "<group>"; };
@@ -498,6 +504,7 @@
 		1454CEA72512B06700AD1BF1 /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
+				147DCA71268E8BA1008F880D /* Portfolio Balance View */,
 				146D914C268D7C00007E5FEE /* Base */,
 				14B9EACE25633A1300A9D4D6 /* Empty View */,
 				1454CEA82512B07600AD1BF1 /* AppTextfield */,
@@ -612,6 +619,7 @@
 			children = (
 				147DCA5E268E6ECE008F880D /* DashboardViewController.swift */,
 				147DCA60268E6EE9008F880D /* FavoritesViewController.swift */,
+				14844848268EB2C90093D287 /* CoinTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -632,6 +640,15 @@
 				147DCA69268E6FF0008F880D /* DashboardRemoteDatasourceImpl.swift */,
 			);
 			path = Dashboard;
+			sourceTree = "<group>";
+		};
+		147DCA71268E8BA1008F880D /* Portfolio Balance View */ = {
+			isa = PBXGroup;
+			children = (
+				147DCA73268E8BDF008F880D /* PortfolioBalanceView.swift */,
+				147DCA75268E8BEB008F880D /* PortfolioBalanceView.xib */,
+			);
+			path = "Portfolio Balance View";
 			sourceTree = "<group>";
 		};
 		14B9EACE25633A1300A9D4D6 /* Empty View */ = {
@@ -795,6 +812,7 @@
 				147DCA58268E675D008F880D /* GoogleService-Info.plist in Resources */,
 				145BF207256429350052E503 /* SF-Pro-Display-BlackItalic.otf in Resources */,
 				145BF1F9256429350052E503 /* SF-Pro-Display-SemiboldItalic.otf in Resources */,
+				147DCA76268E8BEB008F880D /* PortfolioBalanceView.xib in Resources */,
 				147DCA5D268E6EA8008F880D /* Dashboard.storyboard in Resources */,
 				145BF1F8256429350052E503 /* SF-Pro-Display-Semibold.otf in Resources */,
 				145BF1EF256429350052E503 /* SF-Pro-Display-LightItalic.otf in Resources */,
@@ -958,6 +976,7 @@
 				1454CE622512A4B000AD1BF1 /* ValidationMessageConstants.swift in Sources */,
 				1454CE5C2512A45000AD1BF1 /* ValidationMessage.swift in Sources */,
 				1454CE732512A68200AD1BF1 /* AppConstants.swift in Sources */,
+				147DCA74268E8BDF008F880D /* PortfolioBalanceView.swift in Sources */,
 				14C23DA225034AF900614E69 /* IBaseRemoteDataSource.swift in Sources */,
 				1454CE6F2512A5FB00AD1BF1 /* Fonts+Extensions.swift in Sources */,
 				1454CE772512A6F700AD1BF1 /* UIView+Extensions.swift in Sources */,
@@ -1001,6 +1020,7 @@
 				1454CE652512A53000AD1BF1 /* AlertType.swift in Sources */,
 				1454CE7B2512A74700AD1BF1 /* UIViewController+Extensions.swift in Sources */,
 				1454CE792512A71F00AD1BF1 /* UIColor+Extensions.swift in Sources */,
+				14844849268EB2C90093D287 /* CoinTableViewCell.swift in Sources */,
 				146D9148268D7BE2007E5FEE /* AppTextfield.swift in Sources */,
 				1454CE972512AB7A00AD1BF1 /* BaseViewModel.swift in Sources */,
 				14C23DA425034B3800614E69 /* BaseRemoteDataSourceImpl.swift in Sources */,

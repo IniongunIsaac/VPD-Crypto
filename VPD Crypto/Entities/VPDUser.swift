@@ -11,6 +11,10 @@ import Foundation
 struct VPDUser: Codable, Scopable {
     let fullname: String
     let email: String
+    
     var btcBalance: Double { Double.random(in: 10000...100000) }
     var ethBalance: Double { Double.random(in: 10000...100000) }
+    
+    var btcPercentage: Int { Int.random(in: 10...20) }
+    var ethPercentage: Int { Int.random(in: 10...20) }
 }

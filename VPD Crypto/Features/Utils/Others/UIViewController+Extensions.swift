@@ -80,7 +80,7 @@ extension UIViewController {
     }
     
     func navigateToDashboard(animate: Bool = false) {
-        //setViewControllers(with: R.storyboard.home.homeViewController()!, animate: animate)
+        setViewControllers(with: R.storyboard.dashboard.dashboardViewController()!, animate: animate)
     }
     
     func hideNavBar(_ shouldHide: Bool = true) {
