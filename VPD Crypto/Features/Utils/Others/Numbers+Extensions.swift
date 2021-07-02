@@ -21,14 +21,26 @@ extension FormattableNumeric {
         String(format: "%.\(places)f", self as! NSNumber)
     }
     
-    var currencyFormatted: String {
+    func currencyFormatted(symbol: String = "₦") -> String {
         let currencyFormatter = NumberFormatter()
         currencyFormatter.groupingSeparator = ","
         currencyFormatter.groupingSize = 3
         currencyFormatter.usesGroupingSeparator = true
         currencyFormatter.numberStyle = .none
         
-        return "₦\(currencyFormatter.string(from: self as! NSNumber)!)"
+        return "\(symbol)\(currencyFormatter.string(from: self as! NSNumber)!)"
+    }
+    
+    var double: Double {
+        Double(truncating: self as! NSNumber)
+    }
+    
+    var float: Float {
+        Float(truncating: self as! NSNumber)
+    }
+    
+    var int: Int {
+        Int(truncating: self as! NSNumber)
     }
     
     var string: String { "\(self as! NSNumber)" }
