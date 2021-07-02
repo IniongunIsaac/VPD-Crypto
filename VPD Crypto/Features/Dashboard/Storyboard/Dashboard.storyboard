@@ -289,19 +289,188 @@
             </objects>
             <point key="canvasLocation" x="761" y="119"/>
         </scene>
+        <!--Coin Details View Controller-->
+        <scene sceneID="WVu-sp-trh">
+            <objects>
+                <viewController storyboardIdentifier="coinDetailsViewController" id="mXJ-oS-xUP" customClass="CoinDetailsViewController" customModule="VPD_Crypto" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="X1l-hY-zNq">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="back_icon" translatesAutoresizingMaskIntoConstraints="NO" id="Ihh-oi-d7Y">
+                                <rect key="frame" x="10" y="54" width="35" height="35"/>
+                                <color key="tintColor" systemColor="labelColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="6BD-Ew-cQa"/>
+                                    <constraint firstAttribute="width" constant="35" id="som-6V-c1w"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coin Statistics" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fbN-QE-oHY">
+                                <rect key="frame" x="108" y="133" width="198" height="36"/>
+                                <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="7oz-Ku-zNU">
+                                <rect key="frame" x="66.5" y="228" width="281" height="60.5"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bitcoin_icon" translatesAutoresizingMaskIntoConstraints="NO" id="nna-we-Wi1">
+                                        <rect key="frame" x="0.0" y="5.5" width="50" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="9Hx-md-VUv"/>
+                                            <constraint firstAttribute="width" constant="50" id="gaa-aS-zF4"/>
+                                        </constraints>
+                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="bottom" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="nWF-YZ-NBr" userLabel="Balance Stack View">
+                                        <rect key="frame" x="70" y="0.0" width="211" height="60.5"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="OKv-sV-5vQ">
+                                                <rect key="frame" x="0.0" y="0.0" width="211" height="60.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Etherium/ETH" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sid-0r-Qxz">
+                                                        <rect key="frame" x="0.0" y="0.0" width="106" height="20.5"/>
+                                                        <fontDescription key="fontDescription" name="SFProDisplay-Semibold" family="SF Pro Display" pointSize="17"/>
+                                                        <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="y0K-aH-6An">
+                                                        <rect key="frame" x="0.0" y="35.5" width="211" height="25"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="250" text="$0.000000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="QfQ-ge-13Q">
+                                                                <rect key="frame" x="0.0" y="0.0" width="125.5" height="25"/>
+                                                                <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="23"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="im2-Yc-nwg">
+                                                                <rect key="frame" x="145.5" y="0.0" width="65.5" height="25"/>
+                                                                <subviews>
+                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="angle_up" translatesAutoresizingMaskIntoConstraints="NO" id="XhL-7n-TkU">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="25" height="25"/>
+                                                                        <color key="tintColor" name="AccentColor"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" constant="25" id="34F-R9-8dZ"/>
+                                                                            <constraint firstAttribute="width" constant="25" id="RLO-ml-baF"/>
+                                                                        </constraints>
+                                                                    </imageView>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="251" text="+0%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Xh-Br-VoC">
+                                                                        <rect key="frame" x="29" y="0.0" width="36.5" height="25"/>
+                                                                        <fontDescription key="fontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="18"/>
+                                                                        <color key="textColor" name="AccentColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
+                                                            </stackView>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="cD8-W4-LDU">
+                                <rect key="frame" x="20" y="368" width="374" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tcg-5h-g7m">
+                                        <rect key="frame" x="0.0" y="0.0" width="177" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="bkY-Ah-6nc"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="16"/>
+                                        <state key="normal" title="Convert to Naira">
+                                            <color key="titleColor" name="PrimaryColor"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" name="PrimaryColor"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="convertToNairaButtonTapped:" destination="mXJ-oS-xUP" eventType="touchUpInside" id="vb3-bX-loP"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wv7-P5-oRX">
+                                        <rect key="frame" x="197" y="0.0" width="177" height="50"/>
+                                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="Lqs-xi-mfd"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="16"/>
+                                        <state key="normal" title="Add to Favorites">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="addToFavoritesButtonTapped:" destination="mXJ-oS-xUP" eventType="touchUpInside" id="ryZ-6M-QTg"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="gXo-aN-rLJ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="cD8-W4-LDU" firstAttribute="leading" secondItem="gXo-aN-rLJ" secondAttribute="leading" constant="20" id="1Fb-7q-yWN"/>
+                            <constraint firstItem="Ihh-oi-d7Y" firstAttribute="top" secondItem="gXo-aN-rLJ" secondAttribute="top" constant="10" id="1tJ-xU-FfU"/>
+                            <constraint firstItem="fbN-QE-oHY" firstAttribute="centerX" secondItem="X1l-hY-zNq" secondAttribute="centerX" id="Hn5-Ix-4EV"/>
+                            <constraint firstItem="Ihh-oi-d7Y" firstAttribute="leading" secondItem="gXo-aN-rLJ" secondAttribute="leading" constant="10" id="MIQ-kf-khE"/>
+                            <constraint firstItem="7oz-Ku-zNU" firstAttribute="centerX" secondItem="X1l-hY-zNq" secondAttribute="centerX" id="VMf-s1-Xut"/>
+                            <constraint firstItem="cD8-W4-LDU" firstAttribute="top" secondItem="7oz-Ku-zNU" secondAttribute="bottom" constant="79.5" id="XHO-QE-kEm"/>
+                            <constraint firstItem="7oz-Ku-zNU" firstAttribute="top" secondItem="fbN-QE-oHY" secondAttribute="bottom" constant="59" id="cjx-BT-ePc"/>
+                            <constraint firstItem="gXo-aN-rLJ" firstAttribute="trailing" secondItem="cD8-W4-LDU" secondAttribute="trailing" constant="20" id="erZ-aj-m0D"/>
+                            <constraint firstItem="fbN-QE-oHY" firstAttribute="top" secondItem="gXo-aN-rLJ" secondAttribute="top" constant="89" id="pmW-qG-k6a"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="addToFavoritesButton" destination="Wv7-P5-oRX" id="GeI-sJ-8DD"/>
+                        <outlet property="backNavImageView" destination="Ihh-oi-d7Y" id="JoF-m3-7jB"/>
+                        <outlet property="coinImageView" destination="nna-we-Wi1" id="HRl-rm-qUW"/>
+                        <outlet property="coinNameLabel" destination="Sid-0r-Qxz" id="ssG-Bc-FzS"/>
+                        <outlet property="convertToNairaButton" destination="Tcg-5h-g7m" id="r9u-eX-iPj"/>
+                        <outlet property="currentPriceLabel" destination="QfQ-ge-13Q" id="sqH-K8-qXV"/>
+                        <outlet property="percentageIconImageView" destination="XhL-7n-TkU" id="rqg-1h-K0j"/>
+                        <outlet property="percentageLabel" destination="3Xh-Br-VoC" id="xPe-Yk-VBL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NIL-OV-6xt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1503" y="119"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="angle_up" width="60" height="60"/>
+        <image name="back_icon" width="512" height="512"/>
         <image name="bitcoin_icon" width="64" height="64"/>
         <image name="ethereum_icon" width="155" height="256"/>
         <image name="heart_filled_icon" width="48" height="48"/>
+        <namedColor name="AccentColor">
+            <color red="0.093999996781349182" green="0.60399997234344482" blue="0.70599997043609619" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="PrimaryColor">
             <color red="0.0" green="0.46299999952316284" blue="0.70999997854232788" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemIndigoColor">
             <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

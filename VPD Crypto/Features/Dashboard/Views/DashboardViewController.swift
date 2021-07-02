@@ -21,6 +21,7 @@ class DashboardViewController: BaseViewController {
     var dashboardViewModel: IDashboardViewModel!
     override func getViewModel() -> BaseViewModel { dashboardViewModel as! BaseViewModel }
     override var horizontalProgressBarYPosition: CGFloat { usernameStackView.minY - 5 }
+    override var views: [UIView] { [allCoinsTableView, favoritesImageView] }
     
     fileprivate lazy var emptyView: EmptyView = {
         EmptyView().apply {
@@ -65,6 +66,11 @@ class DashboardViewController: BaseViewController {
     
     @objc fileprivate func refreshCoins() {
         dashboardViewModel.getCoins(isInitial: true)
+    }
+    
+    override func hideLoading() {
+        super.hideLoading()
+        uiRefreshControl.endRefreshing()
     }
     
     override func setChildViewControllerObservers() {
@@ -142,10 +148,16 @@ extension DashboardViewController: UITableViewDataSource, UITableViewDelegate {
         let coin = coins[indexPath.row]
         cell.configureView(coin: coin)
         cell.animateViewOnTapGesture { [weak self] in
-            
+            self?.showCoinDetailsViewController(coin)
         }
         
         return cell
+    }
+    
+    fileprivate func showCoinDetailsViewController(_ coin: Coin) {
+        pushViewController(R.storyboard.dashboard.coinDetailsViewController()!.apply {
+            $0.coin = coin
+        })
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {

@@ -26,6 +26,8 @@ struct DashboardDependencyInjections {
         
         container.storyboardInitCompleted(FavoritesViewController.self) { $1.dashboardViewModel = $0.resolve(IDashboardViewModel.self) }
         
+        container.storyboardInitCompleted(CoinDetailsViewController.self) { $1.dashboardViewModel = $0.resolve(IDashboardViewModel.self) }
+        
     }
     
 }

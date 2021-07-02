@@ -66,6 +66,7 @@
 		145BF208256429350052E503 /* SF-Pro-Display-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 145BF1EA256429350052E503 /* SF-Pro-Display-Medium.otf */; };
 		145E9BE325656CE6005C6015 /* VerificationButtonType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145E9BE225656CE6005C6015 /* VerificationButtonType.swift */; };
 		145E9BE825656F1E005C6015 /* AuthNavigationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145E9BE725656F1E005C6015 /* AuthNavigationType.swift */; };
+		146B2519268F54E700F7CDEC /* CoinDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146B2518268F54E700F7CDEC /* CoinDetailsViewController.swift */; };
 		146D9148268D7BE2007E5FEE /* AppTextfield.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146D9146268D7BE2007E5FEE /* AppTextfield.swift */; };
 		146D9149268D7BE2007E5FEE /* AppTextfield.xib in Resources */ = {isa = PBXBuildFile; fileRef = 146D9147268D7BE2007E5FEE /* AppTextfield.xib */; };
 		146D914B268D7BF9007E5FEE /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146D914A268D7BF9007E5FEE /* BaseView.swift */; };
@@ -185,6 +186,7 @@
 		145BF1EA256429350052E503 /* SF-Pro-Display-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Medium.otf"; sourceTree = "<group>"; };
 		145E9BE225656CE6005C6015 /* VerificationButtonType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationButtonType.swift; sourceTree = "<group>"; };
 		145E9BE725656F1E005C6015 /* AuthNavigationType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthNavigationType.swift; sourceTree = "<group>"; };
+		146B2518268F54E700F7CDEC /* CoinDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinDetailsViewController.swift; sourceTree = "<group>"; };
 		146D9146268D7BE2007E5FEE /* AppTextfield.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppTextfield.swift; sourceTree = "<group>"; };
 		146D9147268D7BE2007E5FEE /* AppTextfield.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AppTextfield.xib; sourceTree = "<group>"; };
 		146D914A268D7BF9007E5FEE /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
@@ -620,6 +622,7 @@
 				147DCA5E268E6ECE008F880D /* DashboardViewController.swift */,
 				147DCA60268E6EE9008F880D /* FavoritesViewController.swift */,
 				14844848268EB2C90093D287 /* CoinTableViewCell.swift */,
+				146B2518268F54E700F7CDEC /* CoinDetailsViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -977,6 +980,7 @@
 				1454CE5C2512A45000AD1BF1 /* ValidationMessage.swift in Sources */,
 				1454CE732512A68200AD1BF1 /* AppConstants.swift in Sources */,
 				147DCA74268E8BDF008F880D /* PortfolioBalanceView.swift in Sources */,
+				146B2519268F54E700F7CDEC /* CoinDetailsViewController.swift in Sources */,
 				14C23DA225034AF900614E69 /* IBaseRemoteDataSource.swift in Sources */,
 				1454CE6F2512A5FB00AD1BF1 /* Fonts+Extensions.swift in Sources */,
 				1454CE772512A6F700AD1BF1 /* UIView+Extensions.swift in Sources */,
