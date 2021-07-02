@@ -28,6 +28,14 @@ class DashboardRemoteDatasourceImpl: BaseRemoteDataSourceImpl, IDashboardRemoteD
     }
     
     func getUserData() -> Observable<VPDUser> {
-        return firestore.collection(RemoteDataSourceConstants.USERS_COLLECTION).document(auth.currentUser!.uid).rxGetDocument()
+        firestore.collection(RemoteDataSourceConstants.USERS_COLLECTION).document(auth.currentUser!.uid).rxGetDocument()
+    }
+    
+    func saveFavoriteCoin(_ coin: Coin) -> Observable<Void> {
+        firestore.collection(RemoteDataSourceConstants.COINS_COLLECTION).document(coin.id).rxSetData(from: coin)
+    }
+    
+    func getFavoriteCoins() -> Observable<[Coin]> {
+        firestore.collection(RemoteDataSourceConstants.COINS_COLLECTION).rxGetDocuments()
     }
 }

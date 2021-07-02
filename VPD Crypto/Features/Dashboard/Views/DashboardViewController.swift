@@ -47,7 +47,7 @@ class DashboardViewController: BaseViewController {
         [bitcoinPortfolioView, etheriumPortfolioView].addClearBackground()
         
         favoritesImageView.animateViewOnTapGesture { [weak self] in
-            
+            self?.showFavoriteCoins()
         }
         
         allCoinsTableView.do {
@@ -62,6 +62,10 @@ class DashboardViewController: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         dashboardViewModel.getCoins(isInitial: true)
+    }
+    
+    fileprivate func showFavoriteCoins() {
+        pushViewController(R.storyboard.dashboard.favoritesViewController()!)
     }
     
     @objc fileprivate func refreshCoins() {
@@ -146,7 +150,7 @@ extension DashboardViewController: UITableViewDataSource, UITableViewDelegate {
         let cell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.coinTableViewCell.identifier, for: indexPath) as! CoinTableViewCell
         
         let coin = coins[indexPath.row]
-        cell.configureView(coin: coin)
+        cell.coinView.configureView(coin: coin)
         cell.animateViewOnTapGesture { [weak self] in
             self?.showCoinDetailsViewController(coin)
         }

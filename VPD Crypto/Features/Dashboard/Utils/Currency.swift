@@ -1,15 +1,13 @@
 //
-//  CoinTableViewCell.swift
+//  Currency.swift
 //  VPD Crypto
 //
 //  Created by Isaac Iniongun on 02/07/2021.
 //  Copyright © 2021 Isaac Iniongun. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
-class CoinTableViewCell: UITableViewCell {
-
-    @IBOutlet weak var coinView: CoinView!
-
+enum Currency {
+    case naira, dollar
 }

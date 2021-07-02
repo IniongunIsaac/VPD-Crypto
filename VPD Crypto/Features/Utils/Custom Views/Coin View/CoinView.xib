@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SF-Pro-Display-Medium.otf">
+            <string>SFProDisplay-Medium</string>
+        </array>
+        <array key="SF-Pro-Display-Semibold.otf">
+            <string>SFProDisplay-Semibold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CoinView" customModule="VPD_Crypto" customModuleProvider="target">
+            <connections>
+                <outlet property="coinImageView" destination="Lpa-6y-VNc" id="2GZ-2R-gBm"/>
+                <outlet property="contentView" destination="iN0-l3-epB" id="k6c-fX-gsE"/>
+                <outlet property="currentPriceLabel" destination="fLD-Nr-ULl" id="jm1-aN-qAW"/>
+                <outlet property="detailsView" destination="KtX-F4-7Dl" id="mRc-h2-E5e"/>
+                <outlet property="nameLabel" destination="Th2-tm-84Y" id="AHm-Vq-0hP"/>
+                <outlet property="percentageLabel" destination="Bd4-lf-hFD" id="uhM-AZ-tX4"/>
+                <outlet property="symbolLabel" destination="apS-hY-jRh" id="tkb-pW-eYe"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KtX-F4-7Dl">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="JSb-rI-LeF">
+                            <rect key="frame" x="15" y="17" width="384" height="36.5"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bitcoin_icon" translatesAutoresizingMaskIntoConstraints="NO" id="Lpa-6y-VNc">
+                                    <rect key="frame" x="0.0" y="0.5" width="35" height="35"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="35" id="kQ2-jD-Bnp"/>
+                                        <constraint firstAttribute="height" constant="35" id="wpl-E0-dM7"/>
+                                    </constraints>
+                                </imageView>
+                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="BN8-NK-7cI">
+                                    <rect key="frame" x="43" y="0.0" width="341" height="36.5"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="2Hr-lZ-IRI" userLabel="Name Stack View">
+                                            <rect key="frame" x="0.0" y="0.0" width="106.5" height="36.5"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bitcoin" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Th2-tm-84Y">
+                                                    <rect key="frame" x="0.0" y="0.0" width="106.5" height="19.5"/>
+                                                    <fontDescription key="fontDescription" name="SFProDisplay-Semibold" family="SF Pro Display" pointSize="16"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BTC" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="apS-hY-jRh">
+                                                    <rect key="frame" x="0.0" y="19.5" width="106.5" height="17"/>
+                                                    <fontDescription key="fontDescription" name="SFProDisplay-Semibold" family="SF Pro Display" pointSize="14"/>
+                                                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
+                                        <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="aaE-r5-zDr" userLabel="Price Stack View">
+                                            <rect key="frame" x="126.5" y="0.0" width="214.5" height="36.5"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$33,050.90" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fLD-Nr-ULl">
+                                                    <rect key="frame" x="0.0" y="0.0" width="214.5" height="19.5"/>
+                                                    <fontDescription key="fontDescription" name="SFProDisplay-Semibold" family="SF Pro Display" pointSize="16"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-25.89%" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bd4-lf-hFD">
+                                                    <rect key="frame" x="0.0" y="19.5" width="214.5" height="17"/>
+                                                    <fontDescription key="fontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="14"/>
+                                                    <color key="textColor" systemColor="systemRedColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                </stackView>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="JSb-rI-LeF" secondAttribute="trailing" constant="15" id="Llm-za-zw5"/>
+                        <constraint firstAttribute="height" constant="70" id="OMU-g7-rSX"/>
+                        <constraint firstItem="JSb-rI-LeF" firstAttribute="centerY" secondItem="KtX-F4-7Dl" secondAttribute="centerY" id="oSD-au-7Ov"/>
+                        <constraint firstItem="JSb-rI-LeF" firstAttribute="leading" secondItem="KtX-F4-7Dl" secondAttribute="leading" constant="15" id="zRd-dp-f3O"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="8"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="KtX-F4-7Dl" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="6ZF-X6-xtg"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="KtX-F4-7Dl" secondAttribute="bottom" id="gKT-Aa-kfS"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="KtX-F4-7Dl" secondAttribute="trailing" id="kvZ-f4-qHL"/>
+                <constraint firstItem="KtX-F4-7Dl" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="mdq-W7-Buv"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="18.840579710144929" y="-3.3482142857142856"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="bitcoin_icon" width="64" height="64"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

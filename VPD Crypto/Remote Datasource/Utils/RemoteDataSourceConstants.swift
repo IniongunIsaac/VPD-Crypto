@@ -12,6 +12,8 @@ struct RemoteDataSourceConstants {
     
     static let USERS_COLLECTION = "users"
     
+    static let COINS_COLLECTION = "coins"
+    
     struct Endpoints {
         
         fileprivate static var BASE_URL = AppConstants.Keys.BASE_URL

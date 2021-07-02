@@ -15,4 +15,8 @@ protocol IDashboardRemoteDatasource {
     
     func getUserData() -> Observable<VPDUser>
     
+    func saveFavoriteCoin(_ coin: Coin) -> Observable<Void>
+    
+    func getFavoriteCoins() -> Observable<[Coin]>
+    
 }

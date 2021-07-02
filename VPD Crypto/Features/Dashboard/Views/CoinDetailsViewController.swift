@@ -25,6 +25,7 @@ class CoinDetailsViewController: BaseViewController {
     override var views: [UIView] { [addToFavoritesButton, convertToNairaButton, backNavImageView] }
     
     var coin: Coin!
+    fileprivate var currency: Currency = .dollar
     
     override func configureViews() {
         super.configureViews()
@@ -34,18 +35,31 @@ class CoinDetailsViewController: BaseViewController {
     
     fileprivate func showCoinDetails() {
         coin.do {
-            coinNameLabel.text = "\($0.name)/\($0.symbol)"
+            coinNameLabel.text = "\($0.name)/\($0.symbol.uppercased())"
             coinImageView.setImageFromURL(url: $0.image, placeholderImage: R.image.bitcoin_icon(), cornerRadius: 0)
             currentPriceLabel.text = $0.currentPrice.currencyFormatted(symbol: "$")
             percentageLabel.text = "\($0.marketCapChangePercentage24H)%"
             percentageLabel.textColor = $0.marketCapChangePercentage24H > 0 ? .appGreen : .appRed
+            percentageIconImageView.image = $0.marketCapChangePercentage24H > 0 ? R.image.angle_up() : R.image.angle_down()
+            percentageIconImageView.tintColor = $0.marketCapChangePercentage24H > 0 ? .primaryColor : .appRed
         }
     }
 
     @IBAction func convertToNairaButtonTapped(_ sender: Any) {
+        if currency == .dollar {
+            currentPriceLabel.text = (coin.currentPrice * 411.50).currencyFormatted()
+            currency = .naira
+            convertToNairaButton.title = "Covert to Dollar"
+        } else {
+            currentPriceLabel.text = coin.currentPrice.currencyFormatted(symbol: "$")
+            currency = .dollar
+            convertToNairaButton.title = "Covert to Naira"
+        }
+        
     }
     
     @IBAction func addToFavoritesButtonTapped(_ sender: Any) {
+        dashboardViewModel.saveFavoriteCoin(coin)
     }
     
 }

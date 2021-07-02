@@ -16,6 +16,8 @@ class DashboardViewModelImpl: BaseViewModel, IDashboardViewModel {
     var canFetchMoreCoins: Bool { currentPage < 50 }
     var user: PublishSubject<VPDUser> = PublishSubject()
     var coins: [Coin] = []
+    var favoriteCoins: PublishSubject<[Coin]> = PublishSubject()
+    
     fileprivate var currentPage = 1
     
     fileprivate let remoteDatasource: IDashboardRemoteDatasource
@@ -59,6 +61,18 @@ class DashboardViewModelImpl: BaseViewModel, IDashboardViewModel {
             })
         }
         
+    }
+    
+    func saveFavoriteCoin(_ coin: Coin) {
+        subscribeAny(remoteDatasource.saveFavoriteCoin(coin), success: { [weak self] in
+            self?.showMessage("Coin added to favorites!")
+        })
+    }
+    
+    func getFavoriteCoins() {
+        subscribeAny(remoteDatasource.getFavoriteCoins(), success: { [weak self] coins in
+            self?.favoriteCoins.onNext(coins)
+        })
     }
     
 }

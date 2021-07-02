@@ -64,38 +64,4 @@ class BaseViewModel {
         }).disposed(by: disposeBag)
     }
     
-//    func subscribe<T>(_ observable: Observable<BaseResponse<T>>, showLoadingAnimation: Bool = true, showMessageAlerts: Bool = true, errorMessage: String? = nil, success: ((T) -> Void)? = nil, error: ((Error) -> Void)? = nil) {
-//        showLoading(showLoadingAnimation)
-//        observable.subscribe(onNext: { [weak self] response in
-//            self?.showLoading(false)
-//
-//            if let data = response.data {
-//                success?(data)
-//            } else {
-//                if showMessageAlerts {
-//                    if let errorMessage = errorMessage {
-//                        self?.showMessage(errorMessage, type: .error)
-//                    } else {
-//                        self?.showMessage(response.shortDescription, type: .error)
-//                    }
-//                }
-//            }
-//
-//        }, onError: { [weak self] err in
-//            self?.showLoading(false)
-//
-//            if showMessageAlerts {
-//                if let errorMessage = errorMessage {
-//                    self?.showMessage(errorMessage, type: .error)
-//                }
-//                if let error = error {
-//                    error(err)
-//                } else {
-//                    self?.emitFalseLoadingAndErrorValues(error: err)
-//                }
-//            }
-//
-//        }).disposed(by: disposeBag)
-//    }
-    
 }

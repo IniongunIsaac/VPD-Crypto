@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		144A5B29268FB9410015898D /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144A5B28268FB9410015898D /* Currency.swift */; };
+		144A5B2C268FBA7B0015898D /* CoinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144A5B2B268FBA7B0015898D /* CoinView.swift */; };
+		144A5B2E268FBA990015898D /* CoinView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 144A5B2D268FBA990015898D /* CoinView.xib */; };
 		144AD24825028CF200394E59 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144AD24725028CF200394E59 /* AppDelegate.swift */; };
 		144AD24A25028CF200394E59 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144AD24925028CF200394E59 /* SceneDelegate.swift */; };
 		144AD25125028CF400394E59 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 144AD25025028CF400394E59 /* Assets.xcassets */; };
@@ -121,6 +124,9 @@
 /* Begin PBXFileReference section */
 		0A9E567A6B9858CB2FF45EE3 /* Pods_VPD_Crypto_VPD_CryptoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VPD_Crypto_VPD_CryptoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DDA08821592680DF4BF6B5C /* Pods-VPD Crypto-VPD CryptoUITests.dev.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VPD Crypto-VPD CryptoUITests.dev.xcconfig"; path = "Target Support Files/Pods-VPD Crypto-VPD CryptoUITests/Pods-VPD Crypto-VPD CryptoUITests.dev.xcconfig"; sourceTree = "<group>"; };
+		144A5B28268FB9410015898D /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
+		144A5B2B268FBA7B0015898D /* CoinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinView.swift; sourceTree = "<group>"; };
+		144A5B2D268FBA990015898D /* CoinView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CoinView.xib; sourceTree = "<group>"; };
 		144AD24425028CF200394E59 /* VPD Crypto-Dev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "VPD Crypto-Dev.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		144AD24725028CF200394E59 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		144AD24925028CF200394E59 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -256,6 +262,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		144A5B27268FB9320015898D /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				144A5B28268FB9410015898D /* Currency.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		144A5B2A268FBA540015898D /* Coin View */ = {
+			isa = PBXGroup;
+			children = (
+				144A5B2B268FBA7B0015898D /* CoinView.swift */,
+				144A5B2D268FBA990015898D /* CoinView.xib */,
+			);
+			path = "Coin View";
+			sourceTree = "<group>";
+		};
 		144AD23B25028CF200394E59 = {
 			isa = PBXGroup;
 			children = (
@@ -506,6 +529,7 @@
 		1454CEA72512B06700AD1BF1 /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
+				144A5B2A268FBA540015898D /* Coin View */,
 				147DCA71268E8BA1008F880D /* Portfolio Balance View */,
 				146D914C268D7C00007E5FEE /* Base */,
 				14B9EACE25633A1300A9D4D6 /* Empty View */,
@@ -594,6 +618,7 @@
 		147DCA55268E5BCE008F880D /* Dashboard */ = {
 			isa = PBXGroup;
 			children = (
+				144A5B27268FB9320015898D /* Utils */,
 				147DCA5B268E6E92008F880D /* ViewModel */,
 				147DCA5A268E6E8B008F880D /* Views */,
 				147DCA59268E6E6F008F880D /* Storyboard */,
@@ -821,6 +846,7 @@
 				145BF1EF256429350052E503 /* SF-Pro-Display-LightItalic.otf in Resources */,
 				146D9149268D7BE2007E5FEE /* AppTextfield.xib in Resources */,
 				145BF204256429350052E503 /* SF-Pro-Display-Ultralight.otf in Resources */,
+				144A5B2E268FBA990015898D /* CoinView.xib in Resources */,
 				14B9EADB25633A5700A9D4D6 /* EmptyView.xib in Resources */,
 				145BF1FC256429350052E503 /* SF-Pro-Display-BoldItalic.otf in Resources */,
 				145BF205256429350052E503 /* SF-Pro-Display-Light.otf in Resources */,
@@ -1009,9 +1035,11 @@
 				147DCA65268E6F27008F880D /* DashboardViewModelImpl.swift in Sources */,
 				144AD24825028CF200394E59 /* AppDelegate.swift in Sources */,
 				1454CE9E2512AC8F00AD1BF1 /* AuthViewModelImpl.swift in Sources */,
+				144A5B29268FB9410015898D /* Currency.swift in Sources */,
 				147DCA54268E584D008F880D /* Firebase+Rx+Extensions.swift in Sources */,
 				1454CE672512A54C00AD1BF1 /* AlertMessage.swift in Sources */,
 				1454CEA22512AD5F00AD1BF1 /* LoginViewController.swift in Sources */,
+				144A5B2C268FBA7B0015898D /* CoinView.swift in Sources */,
 				1454CE562512A2FB00AD1BF1 /* AuthDependencyInjections.swift in Sources */,
 				147DCA6C268E7CA4008F880D /* Coin.swift in Sources */,
 				1454CE992512ABBA00AD1BF1 /* BaseViewController.swift in Sources */,

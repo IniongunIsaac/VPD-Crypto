@@ -21,5 +21,11 @@ protocol IDashboardViewModel: Scopable {
     
     var canFetchMoreCoins: Bool { get }
     
+    var favoriteCoins: PublishSubject<[Coin]> { get }
+    
     func getCoins(isInitial: Bool)
+    
+    func saveFavoriteCoin(_ coin: Coin)
+    
+    func getFavoriteCoins()
 }
