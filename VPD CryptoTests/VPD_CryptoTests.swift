@@ -7,9 +7,8 @@
 //
 
 import XCTest
-@testable import Spottr
 
-class SpottrTests: XCTestCase {
+class VPD_CryptoTests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.

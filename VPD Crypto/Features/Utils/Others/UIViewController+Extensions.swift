@@ -8,7 +8,6 @@
 
 import Foundation
 import UIKit
-import PopupDialog
 import Kingfisher
 import Toast_Swift
 
@@ -38,21 +37,6 @@ extension UIViewController {
 
         // Notify Child View Controller
         viewController.removeFromParent()
-    }
-    
-    func showDialog(for viewController: UIViewController, opacity: CGFloat = 0.3, dismissCompletionHandler: (() -> Void)? = nil) {
-        let containerAppearance = PopupDialogContainerView.appearance()
-        containerAppearance.cornerRadius = Float(10)
-        
-        let overlayAppearance = PopupDialogOverlayView.appearance()
-        overlayAppearance.opacity = opacity
-        
-        let popupDialog = PopupDialog(viewController: viewController, transitionStyle: .bounceUp, completion: dismissCompletionHandler)
-        present(popupDialog, animated: true, completion: nil)
-    }
-    
-    func getViewController(from storyboardName: String, withId: String) -> UIViewController {
-        return UIStoryboard(name: storyboardName, bundle: Bundle.main).instantiateViewController(withIdentifier: withId)
     }
     
     func setViewControllers(with viewController: UIViewController, animate: Bool = false) {

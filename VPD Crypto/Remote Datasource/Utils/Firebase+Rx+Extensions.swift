@@ -13,6 +13,9 @@ import FirebaseFirestoreSwift
 
 extension DocumentReference {
     
+    /// An Rx Extension for saving data in Firestore
+    /// - Parameter data: A `Codable` representing the data to be saved
+    /// - Returns: an `Observable<Void>`
     func rxSetData<T: Codable>(from data: T) -> Observable<Void> {
         return Observable<Void>.create { observer in
             
@@ -33,6 +36,8 @@ extension DocumentReference {
         }
     }
     
+    /// An Rx Extension for retrieving a single document from Firestore
+    /// - Returns: `Observable<T>` where `T` is a generic type that conforms to the `Codable` Protocol
     func rxGetDocument<T: Codable>() -> Observable<T> {
         return Observable.create { observer in
             self.getDocument { snapshot, error in
@@ -64,6 +69,8 @@ extension DocumentReference {
 
 extension Query {
     
+    /// An Rx Extension to retrieve a list of documents from Firestore
+    /// - Returns: `Observable<[T]>` where `T` is a generic type that conforms to the `Codable` Protocol
     func rxGetDocuments<T: Codable>() -> Observable<[T]> {
         
         return Observable<[T]>.create { observer in
@@ -93,31 +100,6 @@ extension Query {
             return Disposables.create()
         }
         
-    }
-    
-}
-
-extension Firestore {
-    
-    func rxRunTransaction<T>(type: T.Type, _ updateBlock: @escaping (Transaction) throws -> T?) -> Observable<T?> {
-        return Observable.create { observer in
-            self.runTransaction({ transaction, errorPointer in
-                do {
-                    return try updateBlock(transaction)
-                } catch {
-                    errorPointer?.pointee = error as NSError
-                    return nil
-                }
-            }, completion: { value, error in
-                guard let error = error else {
-                    observer.onNext(value as? T)
-                    observer.onCompleted()
-                    return
-                }
-                observer.onError(error)
-            })
-            return Disposables.create()
-        }
     }
     
 }

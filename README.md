@@ -3,7 +3,7 @@ An iOS application that allows view cryptocurrencies in realtime
 
 ##### Features:
 * Users can sign in using their email and password or sign up for a free account with a formal name, email and password.
-* Dashboard showing cryptocurrencies in realtime.
+* Dashboard showing a paginated list of cryptocurrencies in realtime.
 * Coin Details screen: allows users to add coin to favorites and also convert price to Naira.
 * Favorite Coins
 

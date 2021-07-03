@@ -9,5 +9,5 @@
 import Foundation
 
 enum ValidationType {
-    case firstName, lastName, email, emailOrPhone, phoneNumber, password, confirmPassword, name
+    case email, emailOrPhone, phoneNumber, password, confirmPassword, name
 }

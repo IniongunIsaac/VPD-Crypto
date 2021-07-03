@@ -17,12 +17,13 @@
 		144A5B3B268FD4660015898D /* favorites.png in Resources */ = {isa = PBXBuildFile; fileRef = 144A5B35268FD4650015898D /* favorites.png */; };
 		144A5B3C268FD4660015898D /* login.png in Resources */ = {isa = PBXBuildFile; fileRef = 144A5B36268FD4650015898D /* login.png */; };
 		144A5B3D268FD4660015898D /* coin_details.png in Resources */ = {isa = PBXBuildFile; fileRef = 144A5B37268FD4660015898D /* coin_details.png */; };
+		144A5B402690A8740015898D /* InputValidator_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144A5B3F2690A8740015898D /* InputValidator_Tests.swift */; };
 		144AD24825028CF200394E59 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144AD24725028CF200394E59 /* AppDelegate.swift */; };
 		144AD24A25028CF200394E59 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144AD24925028CF200394E59 /* SceneDelegate.swift */; };
 		144AD25125028CF400394E59 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 144AD25025028CF400394E59 /* Assets.xcassets */; };
 		144AD25425028CF400394E59 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 144AD25225028CF400394E59 /* LaunchScreen.storyboard */; };
-		144AD25F25028CF400394E59 /* SpottrTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144AD25E25028CF400394E59 /* SpottrTests.swift */; };
-		144AD26A25028CF400394E59 /* SpottrUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144AD26925028CF400394E59 /* SpottrUITests.swift */; };
+		144AD25F25028CF400394E59 /* VPD_CryptoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144AD25E25028CF400394E59 /* VPD_CryptoTests.swift */; };
+		144AD26A25028CF400394E59 /* VPD_CryptoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144AD26925028CF400394E59 /* VPD_CryptoUITests.swift */; };
 		144AD27825028FE700394E59 /* Podfile.lock in Resources */ = {isa = PBXBuildFile; fileRef = 144AD27725028FE700394E59 /* Podfile.lock */; };
 		144AD2832502919900394E59 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 144AD2822502919900394E59 /* .gitignore */; };
 		144AD286250292C000394E59 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144AD285250292C000394E59 /* R.generated.swift */; };
@@ -141,6 +142,7 @@
 		144A5B35268FD4650015898D /* favorites.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = favorites.png; sourceTree = "<group>"; };
 		144A5B36268FD4650015898D /* login.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login.png; sourceTree = "<group>"; };
 		144A5B37268FD4660015898D /* coin_details.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coin_details.png; sourceTree = "<group>"; };
+		144A5B3F2690A8740015898D /* InputValidator_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputValidator_Tests.swift; sourceTree = "<group>"; };
 		144AD24425028CF200394E59 /* VPD Crypto-Dev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "VPD Crypto-Dev.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		144AD24725028CF200394E59 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		144AD24925028CF200394E59 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -148,10 +150,10 @@
 		144AD25325028CF400394E59 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		144AD25525028CF400394E59 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		144AD25A25028CF400394E59 /* VPD CryptoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "VPD CryptoTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		144AD25E25028CF400394E59 /* SpottrTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpottrTests.swift; sourceTree = "<group>"; };
+		144AD25E25028CF400394E59 /* VPD_CryptoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VPD_CryptoTests.swift; sourceTree = "<group>"; };
 		144AD26025028CF400394E59 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		144AD26525028CF400394E59 /* VPD CryptoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "VPD CryptoUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		144AD26925028CF400394E59 /* SpottrUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpottrUITests.swift; sourceTree = "<group>"; };
+		144AD26925028CF400394E59 /* VPD_CryptoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VPD_CryptoUITests.swift; sourceTree = "<group>"; };
 		144AD26B25028CF400394E59 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		144AD27725028FE700394E59 /* Podfile.lock */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile.lock; sourceTree = SOURCE_ROOT; };
 		144AD2822502919900394E59 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
@@ -306,6 +308,14 @@
 			path = Screenshots;
 			sourceTree = "<group>";
 		};
+		144A5B3E2690A81C0015898D /* Input Validation */ = {
+			isa = PBXGroup;
+			children = (
+				144A5B3F2690A8740015898D /* InputValidator_Tests.swift */,
+			);
+			path = "Input Validation";
+			sourceTree = "<group>";
+		};
 		144AD23B25028CF200394E59 = {
 			isa = PBXGroup;
 			children = (
@@ -351,7 +361,8 @@
 		144AD25D25028CF400394E59 /* VPD CryptoTests */ = {
 			isa = PBXGroup;
 			children = (
-				144AD25E25028CF400394E59 /* SpottrTests.swift */,
+				144A5B3E2690A81C0015898D /* Input Validation */,
+				144AD25E25028CF400394E59 /* VPD_CryptoTests.swift */,
 				144AD26025028CF400394E59 /* Info.plist */,
 			);
 			path = "VPD CryptoTests";
@@ -360,7 +371,7 @@
 		144AD26825028CF400394E59 /* VPD CryptoUITests */ = {
 			isa = PBXGroup;
 			children = (
-				144AD26925028CF400394E59 /* SpottrUITests.swift */,
+				144AD26925028CF400394E59 /* VPD_CryptoUITests.swift */,
 				144AD26B25028CF400394E59 /* Info.plist */,
 			);
 			path = "VPD CryptoUITests";
@@ -774,6 +785,7 @@
 				144AD25625028CF400394E59 /* Sources */,
 				144AD25725028CF400394E59 /* Frameworks */,
 				144AD25825028CF400394E59 /* Resources */,
+				1CD06414127EA7DBEA1B71E5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -950,6 +962,23 @@
 			shellPath = /bin/sh;
 			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/R.generated.swift\"\n";
 		};
+		1CD06414127EA7DBEA1B71E5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-VPD CryptoTests/Pods-VPD CryptoTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-VPD CryptoTests/Pods-VPD CryptoTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-VPD CryptoTests/Pods-VPD CryptoTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		33155A9E7ADC14400D14B3A3 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1103,7 +1132,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				144AD25F25028CF400394E59 /* SpottrTests.swift in Sources */,
+				144AD25F25028CF400394E59 /* VPD_CryptoTests.swift in Sources */,
+				144A5B402690A8740015898D /* InputValidator_Tests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1111,7 +1141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				144AD26A25028CF400394E59 /* SpottrUITests.swift in Sources */,
+				144AD26A25028CF400394E59 /* VPD_CryptoUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1284,12 +1314,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				BASE_URL = "https://api.coingecko.com/api/v3/";
 				CODE_SIGN_STYLE = Automatic;
+				ENABLE_TESTABILITY = YES;
 				EXCLUDED_ARCHS = arm64;
 				INFOPLIST_FILE = "VPD Crypto/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.iniongungroups.mobile.ios.vpdcrypto;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -1304,18 +1336,18 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = SpottrTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				INFOPLIST_FILE = "VPD CryptoTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.cliqit.mobile.ios.SpottrTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.iniongungroups.mobile.ios.vpdcrypto.VPD_CryptoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VPD Crypto.app/VPD Crypto";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VPD Crypto-Dev.app/VPD Crypto-Dev";
 			};
 			name = Dev;
 		};
@@ -1326,18 +1358,19 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = SpottrTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				INFOPLIST_FILE = "VPD CryptoTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.cliqit.mobile.ios.SpottrTests;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.iniongungroups.mobile.ios.vpdcrypto.VPD_CryptoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VPD Crypto.app/VPD Crypto";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VPD Crypto-Dev.app/VPD Crypto-Dev";
 			};
 			name = Release;
 		};
@@ -1347,13 +1380,13 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = SpottrUITests/Info.plist;
+				INFOPLIST_FILE = "VPD CryptoUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.cliqit.mobile.ios.SpottrUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.iniongungroups.mobile.ios.vpdcrypto.VPD_CryptoUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1367,13 +1400,14 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = SpottrUITests/Info.plist;
+				INFOPLIST_FILE = "VPD CryptoUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.cliqit.mobile.ios.SpottrUITests;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.iniongungroups.mobile.ios.vpdcrypto.VPD_CryptoUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1468,18 +1502,18 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = SpottrTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				INFOPLIST_FILE = "VPD CryptoTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.cliqit.mobile.ios.SpottrTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.iniongungroups.mobile.ios.vpdcrypto.VPD_CryptoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VPD Crypto.app/VPD Crypto";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VPD Crypto-Dev.app/VPD Crypto-Dev";
 			};
 			name = Staging;
 		};
@@ -1489,13 +1523,13 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = SpottrUITests/Info.plist;
+				INFOPLIST_FILE = "VPD CryptoUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.cliqit.mobile.ios.SpottrUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.iniongungroups.mobile.ios.vpdcrypto.VPD_CryptoUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

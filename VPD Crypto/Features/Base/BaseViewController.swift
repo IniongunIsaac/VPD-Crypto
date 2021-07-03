@@ -13,15 +13,21 @@ import HorizontalProgressBar
 import DeviceKit
 import Toast_Swift
 
+/// A Base Class that abstracts common functionalities of UIViewControllers
 class BaseViewController: UIViewController {
     
     let disposeBag = DisposeBag()
     var progressBar: HorizontalProgressbar?
     
+    /// Determines the position of the horizontal progress bar on the UI
     var horizontalProgressBarYPosition: CGFloat {
         navigationController?.navigationBar.frame.maxY ?? (Device.current.isOneOf(Device.allDevicesWithSensorHousing + Device.allSimulatorDevicesWithSensorHousing) ? 88 : 64)
     }
     
+    /// Get's any subtype of `BaseViewModel` with which the ViewController listens for or observes emissions for errors, loading and alerts
+    /// and performs the needed actions such as showing or hiding the loading animation and showing alerts.
+    /// All subtypes of `BaseViewModel` share this common functionality.
+    /// - Returns: a subtype of `BaseViewModel`
     func getViewModel() -> BaseViewModel {
         preconditionFailure("BaseViewController subclass must provide a subclass of BaseViewModel")
     }
@@ -71,12 +77,14 @@ class BaseViewController: UIViewController {
     
     func setChildViewControllerObservers() {}
     
+    /// Observes Alert Messages
     private func observeAlertMessages() {
         getViewModel().alertMessage.asObservable().bind { [weak self] value in
             self?.showAlert(message: value.message, type: value.type)
         }.disposed(by: disposeBag)
     }
     
+    /// Observer for showing or hiding loading animations on the UI
     private func observeLoadingState() {
         getViewModel().isLoading.asObservable().bind { [weak self] value in
             if value {
@@ -87,6 +95,7 @@ class BaseViewController: UIViewController {
         }.disposed(by: disposeBag)
     }
     
+    /// Observers error messages
     private func observeErrorState() {
         getViewModel().error.asObserver().bind { [weak self] error in
             let message = (error as NSError).code == 13 ? "It appears you're offline, please check your internet connection and try again!" : error.localizedDescription

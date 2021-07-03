@@ -25,8 +25,12 @@ protocol IDashboardViewModel: Scopable {
     
     var showAuthOptions: PublishSubject<Bool> { get }
     
+    /// Get cryptocurrencies
+    /// - Parameter isInitial: determines the page number to be used during pagination
     func getCoins(isInitial: Bool)
     
+    /// Saves a favorite coin
+    /// - Parameter coin: coin to be saved as favorite
     func saveFavoriteCoin(_ coin: Coin)
     
     func getFavoriteCoins()

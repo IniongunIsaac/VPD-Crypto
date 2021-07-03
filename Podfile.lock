@@ -213,18 +213,14 @@ PODS:
     - abseil/base/config
     - abseil/meta/type_traits
   - Alamofire (5.2.2)
-  - AttributedStringBuilder (1.2.0)
-  - BEMCheckBox (1.4.1)
   - BoringSSL-GRPC (0.0.7):
     - BoringSSL-GRPC/Implementation (= 0.0.7)
     - BoringSSL-GRPC/Interface (= 0.0.7)
   - BoringSSL-GRPC/Implementation (0.0.7):
     - BoringSSL-GRPC/Interface (= 0.0.7)
   - BoringSSL-GRPC/Interface (0.0.7)
-  - BottomPopup (0.6.0)
   - DeviceKit (4.2.1)
   - Differentiator (4.0.1)
-  - DynamicBlurView (4.1.0)
   - Firebase (6.34.0):
     - Firebase/Core (= 6.34.0)
   - Firebase/Analytics (6.34.0):
@@ -345,8 +341,6 @@ PODS:
     - nanopb/encode (= 1.30906.0)
   - nanopb/decode (1.30906.0)
   - nanopb/encode (1.30906.0)
-  - PopupDialog (1.1.1):
-    - DynamicBlurView (~> 4.0)
   - PromisesObjC (1.2.12)
   - R.swift (5.2.2):
     - R.swift.Library (~> 5.2.0)
@@ -356,6 +350,8 @@ PODS:
   - RxAlamofire/Core (5.6.0):
     - Alamofire (~> 5.1)
     - RxSwift (~> 5.1)
+  - RxBlocking (5.1.1):
+    - RxSwift (~> 5)
   - RxCocoa (5.1.1):
     - RxRelay (~> 5)
     - RxSwift (~> 5)
@@ -387,15 +383,14 @@ PODS:
   - RxSwiftExt/RxCocoa (5.2.0):
     - RxCocoa (~> 5.0)
     - RxSwiftExt/Core
+  - RxTest (5.1.2):
+    - RxSwift (~> 5)
   - Swinject (2.7.1)
   - SwinjectStoryboard (2.2.0):
     - Swinject (~> 2.7.1)
   - Toast-Swift (5.0.1)
 
 DEPENDENCIES:
-  - AttributedStringBuilder
-  - BEMCheckBox
-  - BottomPopup
   - DeviceKit (~> 4.0)
   - Firebase
   - Firebase/Analytics
@@ -405,15 +400,16 @@ DEPENDENCIES:
   - HorizontalProgressBar
   - IQKeyboardManagerSwift
   - Kingfisher
-  - PopupDialog
   - R.swift
   - RxAlamofire (~> 5)
+  - RxBlocking (~> 5)
   - RxCocoa (~> 5)
   - RxDataSources (~> 4.0)
   - RxFirebase/Auth
   - RxFirebase/Firestore
   - RxSwift (~> 5)
   - RxSwiftExt (~> 5)
+  - RxTest (~> 5)
   - Swinject
   - SwinjectStoryboard (from `https://github.com/Swinject/SwinjectStoryboard.git`, branch `master`)
   - Toast-Swift (~> 5.0.1)
@@ -422,13 +418,9 @@ SPEC REPOS:
   trunk:
     - abseil
     - Alamofire
-    - AttributedStringBuilder
-    - BEMCheckBox
     - BoringSSL-GRPC
-    - BottomPopup
     - DeviceKit
     - Differentiator
-    - DynamicBlurView
     - Firebase
     - FirebaseAnalytics
     - FirebaseAuth
@@ -448,11 +440,11 @@ SPEC REPOS:
     - Kingfisher
     - leveldb-library
     - nanopb
-    - PopupDialog
     - PromisesObjC
     - R.swift
     - R.swift.Library
     - RxAlamofire
+    - RxBlocking
     - RxCocoa
     - RxDataSources
     - RxFirebase
@@ -461,6 +453,7 @@ SPEC REPOS:
     - RxRelay
     - RxSwift
     - RxSwiftExt
+    - RxTest
     - Swinject
     - Toast-Swift
 
@@ -477,13 +470,9 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   abseil: 6c8eb7892aefa08d929b39f9bb108e5367e3228f
   Alamofire: 814429acc853c6c54ff123fc3d2ef66803823ce0
-  AttributedStringBuilder: 3cee4ae28b8fc6eba136242f89b0ea697a3b9d55
-  BEMCheckBox: 5ba6e37ade3d3657b36caecc35c8b75c6c2b1a4e
   BoringSSL-GRPC: 8edf627ee524575e2f8d19d56f068b448eea3879
-  BottomPopup: 1d5649a3b29396238f0e8f3c82075a7bfcf37ba7
   DeviceKit: cadb5ff25d45fe186778bf2d0fd2ea4750542189
   Differentiator: 886080237d9f87f322641dedbc5be257061b0602
-  DynamicBlurView: 58e18fae80bb614e34681a4486870e7d257b62e8
   Firebase: c23a36d9e4cdf7877dfcba8dd0c58add66358999
   FirebaseAnalytics: 3bb096873ee0d7fa4b6c70f5e9166b6da413cc7f
   FirebaseAuth: c92d49ada7948d1a23466e3db17bc4c2039dddc3
@@ -503,11 +492,11 @@ SPEC CHECKSUMS:
   Kingfisher: 8050bc6f7f68cbf3908bd04df7ccbac188f6d6d6
   leveldb-library: 50c7b45cbd7bf543c81a468fe557a16ae3db8729
   nanopb: 59317e09cf1f1a0af72f12af412d54edf52603fc
-  PopupDialog: 720c92befd8bc23c13442254945213db5612f149
   PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
   R.swift: 7c52cdc57a66840ffe6cbd8a823d732059d42a32
   R.swift.Library: 5ba4f1631300caf9a4d890186930da85d540769d
   RxAlamofire: f34ddbab56fa2a36f99737f4d4ecc22288a1384f
+  RxBlocking: 5f700a78cad61ce253ebd37c9a39b5ccc76477b4
   RxCocoa: 32065309a38d29b5b0db858819b5bf9ef038b601
   RxDataSources: efee07fa4de48477eca0a4611e6d11e2da9c1114
   RxFirebase: 45e6448c69c7212e21f8ba89144443f916437861
@@ -516,10 +505,11 @@ SPEC CHECKSUMS:
   RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
   RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
   RxSwiftExt: 4ca80336f43c28f11a2825cdd2fc61dd6c044697
+  RxTest: 274549b747dca56f47c52c8991ec5cf797ecfe40
   Swinject: ddf78b8486dd9b71a667b852cad919ab4484478e
   SwinjectStoryboard: f0d5b1c16459949d6ff1cbb6610107946b18e1f8
   Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
 
-PODFILE CHECKSUM: 775a3764f68950cef2b40ade7c1b53627de5b65d
+PODFILE CHECKSUM: eb95c2aacf2d13e2c393dbfdde6e24ab71e776cf
 
 COCOAPODS: 1.10.1

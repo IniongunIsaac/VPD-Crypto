@@ -61,10 +61,12 @@ class CreateAccountViewController: BaseViewController {
         observeShowDashboard()
     }
     
+    /// Observe validations messages from the ViewModel
+    /// We're interested in validation results for fullname, email and password
     fileprivate func observeValidationMessages() {
         authViewModel.validationMessages.bind { [weak self] msg in
             switch msg.validationType {
-            case .firstName:
+            case .name:
                 self?.fullnameTextfield.showMessage(msg)
             case .email:
                 self?.emailTextfield.showMessage(msg)

@@ -12,15 +12,7 @@ protocol IInputValidator {
     
     func validateEmailAddress(email: String) -> ValidationMessage
     
-    func validateEmailOrPhone(emailOrPhone: String) -> ValidationMessage
-    
-    func validatePhoneNumber(phoneNo: String) -> ValidationMessage
-    
     func validateName(name: String) -> ValidationMessage
-    
-    func validateFirstName(name: String) -> ValidationMessage
-    
-    func validateLastName(name: String) -> ValidationMessage
     
     func validatePassword(password: String) -> ValidationMessage
     

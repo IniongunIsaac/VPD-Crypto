@@ -54,6 +54,8 @@ class LoginViewController: BaseViewController {
         observeShowDashboard()
     }
     
+    /// Observe validations messages from the ViewModel
+    /// We're interested in validation results for email and password
     fileprivate func observeValidationMessages() {
         authViewModel.validationMessages.bind { [weak self] msg in
             switch msg.validationType {

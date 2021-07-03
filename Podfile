@@ -25,19 +25,17 @@ target 'VPD Crypto' do
   
   #Other pods
   pod 'R.swift'
-  pod 'BottomPopup'
-  pod 'PopupDialog'
   pod 'DeviceKit', '~> 4.0'
   pod 'HorizontalProgressBar'
   pod 'Kingfisher'
   pod 'Toast-Swift', '~> 5.0.1'
-  pod "AttributedStringBuilder"
-  pod 'BEMCheckBox'
   pod 'IQKeyboardManagerSwift'
 
   target 'VPD CryptoTests' do
     inherit! :search_paths
     # Pods for testing
+    pod 'RxBlocking', '~> 5'
+    pod 'RxTest', '~> 5'
   end
 
   target 'VPD CryptoUITests' do

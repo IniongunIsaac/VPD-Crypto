@@ -32,7 +32,7 @@ class AuthViewModelImpl: BaseViewModel, IAuthViewModel {
     
     func createAccount(fullname: String, email: String, password: String, confirmPassword: String) {
         let validationMsgs = [
-            inputValidator.validateFirstName(name: fullname),
+            inputValidator.validateName(name: fullname),
             inputValidator.validateEmailAddress(email: email),
             inputValidator.validatePassword(password: password),
             inputValidator.validateConfirmPassword(password: password, confirmPassword: confirmPassword)
